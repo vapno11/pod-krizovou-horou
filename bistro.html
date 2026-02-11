@@ -4,49 +4,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Bistro Citroën HY – Pod Křížovou horou</title>
-  <meta name="description" content="Bistro z ikonického Citroënu HY – plánovaná součást projektu Pod Křížovou horou. Jednoduché občerstvení a místo pro krátké zastavení.">
+  <title>Bistro – Citroën HY | Pod Křížovou horou</title>
+  <meta name="description" content="Bistro v Citroënu HY: káva, domácí limonády a drobné občerstvení v klidném prostředí Lužických hor.">
   <link rel="canonical" href="https://podkrizovouhorou.cz/bistro.html">
+  <meta name="theme-color" content="#173A2F">
   <meta name="robots" content="index,follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Bistro Citroën HY – Pod Křížovou horou">
-  <meta property="og:description" content="Bistro z ikonického Citroënu HY – plánovaná součást projektu Pod Křížovou horou. Jednoduché občerstvení a místo pro krátké zastavení.">
+  <meta property="og:title" content="Bistro – Citroën HY | Pod Křížovou horou">
+  <meta property="og:description" content="Bistro v Citroënu HY: káva, domácí limonády a drobné občerstvení v klidném prostředí Lužických hor.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://podkrizovouhorou.cz/bistro.html">
-  <meta property="og:image" content="https://podkrizovouhorou.cz/assets/og-image.jpg">
+  <meta property="og:locale" content="cs_CZ">
+  <!-- OG image doplníme později -->
+  <!-- <meta property="og:image" content="https://podkrizovouhorou.cz/assets/og/og-image.jpg"> -->
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bistro Citroën HY – Pod Křížovou horou">
-  <meta name="twitter:description" content="Bistro z ikonického Citroënu HY – plánovaná součást projektu Pod Křížovou horou. Jednoduché občerstvení a místo pro krátké zastavení.">
-  <meta name="twitter:image" content="https://podkrizovouhorou.cz/assets/og-image.jpg">
+  <meta name="twitter:title" content="Bistro – Citroën HY | Pod Křížovou horou">
+  <meta name="twitter:description" content="Bistro v Citroënu HY: káva, domácí limonády a drobné občerstvení v klidném prostředí Lužických hor.">
+
+  <link rel="icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Bistro Citroën HY – Pod Křížovou horou",
-  "url": "https://podkrizovouhorou.cz/bistro.html",
-  "description": "Bistro z ikonického Citroënu HY – plánovaná součást projektu Pod Křížovou horou. Jednoduché občerstvení a místo pro krátké zastavení.",
-  "inLanguage": "cs",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Pod Křížovou horou",
-    "url": "https://podkrizovouhorou.cz/"
-  }
-}
-</script>
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
-    <div class="brand">Pod Křížovou horou</div>
-    <nav class="menu">
-      <a href="index.html">Úvod</a>
+    <a class="brand" href="/" aria-label="Pod Křížovou horou – úvod">Pod Křížovou horou</a>
+
+    <input class="nav-toggle" type="checkbox" id="nav-toggle"
+      aria-label="Otevřít menu" aria-controls="main-menu" aria-expanded="false">
+
+    <label class="hamburger" for="nav-toggle" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="menu" id="main-menu" aria-label="Hlavní menu">
+      <a href="/">Úvod</a>
       <a href="apartmany.html">Apartmány</a>
       <a href="caravanpark.html">Caravanpark</a>
       <a href="bistro.html">Bistro</a>
@@ -56,33 +56,106 @@
   </div>
 </header>
 
-<main class="main container">
-  <div class="card">
-    <span class="badge">Bistro</span>
-    <h1>Bistro Citroën HY</h1>
-    <p>
-      Bistro z ikonického Citroënu HY je plánovanou součástí projektu.
-      Cílem je jednoduché občerstvení a místo pro krátké zastavení.
+<main class="main">
+  <section class="page-hero container">
+    <div class="kicker">Bistro</div>
+    <h1>Citroën HY jako srdce zahrady</h1>
+    <p class="muted">
+      Káva, domácí limonády a drobné občerstvení. Bez hluku — s atmosférou zastavení.
     </p>
-    <ul class="list">
-      <li>sezónní provoz</li>
-      <li>jednoduchý sortiment</li>
-      <li>neformální atmosféra</li>
-    </ul>
-    <p class="note">
-      Detaily a termíny doplníme podle postupu realizace.
-    </p>
-  </div>
+    <div class="spacer-12"></div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="kontakt.html">Chci vědět víc</a>
+      <a class="btn btn-ghost" href="vizualizace.html">Vizualizace</a>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="grid-3">
+      <div class="card">
+        <span class="badge">Nabídka</span>
+        <h3>Káva</h3>
+        <p class="muted">Jednoduchá, kvalitní nabídka — hlavně chuť a konzistence.</p>
+      </div>
+
+      <div class="card">
+        <span class="badge">Nabídka</span>
+        <h3>Limonády</h3>
+        <p class="muted">Domácí nealko, ideální po túře nebo na cestu.</p>
+      </div>
+
+      <div class="card">
+        <span class="badge">Nabídka</span>
+        <h3>Drobné občerstvení</h3>
+        <p class="muted">Sezónně a bez přehnaností — spíš doplněk k pobytu.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      Otevírací doba a přesná nabídka budou upřesněny podle sezóny.
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="split">
+      <div>
+        <h2>Charakter místa</h2>
+        <p class="muted">
+          HY není atrakce — je to detail, který drží styl a vytváří příběh. Stejně jako celý projekt.
+        </p>
+        <ul class="list">
+          <li>komorní zahrádka</li>
+          <li>retro prvek, ale moderní kvalita</li>
+          <li>zastavení pro hosty i kolemjdoucí</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">V přípravě</div>
+        <div class="panel-row"><span>vizuály</span><strong>doplníme</strong></div>
+        <div class="panel-row"><span>menu</span><strong>upřesníme</strong></div>
+        <div class="panel-row"><span>sezóna</span><strong>jaro–podzim</strong></div>
+        <div class="panel-note">Jakmile bude první reálné foto, stránka se posune o level.</div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="footer">
-  <div class="container">© 2026 Pod Křížovou horou</div>
+  <div class="container">
+    <div class="footer-row">
+      <div>© Pod Křížovou horou</div>
+      <div class="footer-links">
+        <a href="kontakt.html">Kontakt</a>
+        <a href="vizualizace.html">Vizualizace</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script>
-  const path = location.pathname.split("/").pop() || "index.html";
+  // a11y: aria-expanded sync
+  const toggle = document.getElementById("nav-toggle");
+  if (toggle) {
+    const sync = () => toggle.setAttribute("aria-expanded", toggle.checked ? "true" : "false");
+    toggle.addEventListener("change", sync);
+    sync();
+  }
+
+  // aktivní položka menu (funguje i pro "/")
+  const path = location.pathname.split("/").pop();
+  const current = path && path.length ? path : "index.html";
+
   document.querySelectorAll(".menu a").forEach(a=>{
-    if(a.getAttribute("href") === path) a.classList.add("active");
+    const href = a.getAttribute("href");
+    if ((current === "index.html" && (href === "/" || href === "index.html")) || href === current) {
+      a.classList.add("active");
+    }
+  });
+
+  // zavřít mobilní menu po kliku
+  document.querySelectorAll(".menu a").forEach(a=>{
+    a.addEventListener("click", ()=>{ if(toggle) toggle.checked=false; });
   });
 </script>
 

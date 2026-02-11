@@ -7,6 +7,7 @@
   <title>Kontakt – Pod Křížovou horou</title>
   <meta name="description" content="Kontakt na projekt Pod Křížovou horou. Pro informace, spolupráci nebo budoucí rezervace nám napiš.">
   <link rel="canonical" href="https://podkrizovouhorou.cz/kontakt.html">
+  <meta name="theme-color" content="#173A2F">
   <meta name="robots" content="index,follow">
 
   <!-- Open Graph -->
@@ -14,6 +15,7 @@
   <meta property="og:description" content="Kontakt na projekt Pod Křížovou horou. Pro informace, spolupráci nebo budoucí rezervace nám napiš.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://podkrizovouhorou.cz/kontakt.html">
+  <meta property="og:locale" content="cs_CZ">
   <meta property="og:image" content="https://podkrizovouhorou.cz/assets/og-image.jpg">
 
   <!-- Twitter -->
@@ -22,6 +24,7 @@
   <meta name="twitter:description" content="Kontakt na projekt Pod Křížovou horou. Pro informace, spolupráci nebo budoucí rezervace nám napiš.">
   <meta name="twitter:image" content="https://podkrizovouhorou.cz/assets/og-image.jpg">
 
+  <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="styles.css">
 
   <script type="application/ld+json">
@@ -44,9 +47,17 @@
 
 <header class="header">
   <div class="container nav">
-    <div class="brand">Pod Křížovou horou</div>
-    <nav class="menu">
-      <a href="index.html">Úvod</a>
+    <a class="brand" href="/" aria-label="Pod Křížovou horou – úvod">Pod Křížovou horou</a>
+
+    <input class="nav-toggle" type="checkbox" id="nav-toggle"
+      aria-label="Otevřít menu" aria-controls="main-menu" aria-expanded="false">
+
+    <label class="hamburger" for="nav-toggle" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="menu" id="main-menu" aria-label="Hlavní menu">
+      <a href="/">Úvod</a>
       <a href="apartmany.html">Apartmány</a>
       <a href="caravanpark.html">Caravanpark</a>
       <a href="bistro.html">Bistro</a>
@@ -56,25 +67,77 @@
   </div>
 </header>
 
-<main class="main container">
-  <div class="card">
-    <span class="badge">Kontakt</span>
-    <h1>Kontakt</h1>
-    <h2 class="subhead">Zůstaňme v kontaktu</h2>
-    <p>Pro informace, spolupráci nebo budoucí rezervace nám napiš:</p>
-    <p style="font-size:18px;"><strong>info@podkrizovouhorou.cz</strong></p>
-    <p class="note">Ozveme se jen k věcem, které dávají smysl.</p>
-  </div>
+<main class="main">
+  <section class="page-hero container">
+    <div class="kicker">Kontakt</div>
+    <h1>Zůstaňme v kontaktu</h1>
+    <p class="muted">Pro informace, spolupráci nebo budoucí rezervace nám napiš. Odpovídáme věcně a k tématům, která dávají smysl.</p>
+  </section>
+
+  <section class="section container">
+    <div class="split">
+      <div class="card">
+        <span class="badge">E-mail</span>
+        <h2>info@podkrizovouhorou.cz</h2>
+        <p class="muted">Nejrychlejší cesta je e-mail. Ideálně napiš stručně: kdo jsi a co potřebuješ.</p>
+
+        <div class="spacer-12"></div>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="mailto:info@podkrizovouhorou.cz?subject=Pod%20K%C5%99%C3%AD%C5%BEovou%20horou%20%E2%80%93%20dotaz">Napsat e-mail</a>
+          <a class="btn btn-ghost" href="vizualizace.html">Vizualizace projektu</a>
+        </div>
+
+        <p class="note">
+          Pokud řešíš rezervaci, uveď prosím předběžný termín, počet osob a preferenci (apartmán / caravan).
+        </p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Pro koho je kontakt</div>
+        <div class="panel-row"><span>Hosté</span><strong>dotazy / novinky</strong></div>
+        <div class="panel-row"><span>Spolupráce</span><strong>lokální partneři</strong></div>
+        <div class="panel-row"><span>Média</span><strong>podklady / info</strong></div>
+        <div class="panel-note">Projekt je ve vývoji — stránku budeme postupně doplňovat o konkrétní provozní informace.</div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="footer">
-  <div class="container">© 2026 Pod Křížovou horou</div>
+  <div class="container">
+    <div class="footer-row">
+      <div>© Pod Křížovou horou</div>
+      <div class="footer-links">
+        <a href="kontakt.html">Kontakt</a>
+        <a href="vizualizace.html">Vizualizace</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script>
-  const path = location.pathname.split("/").pop() || "index.html";
+  // a11y: aria-expanded sync
+  const toggle = document.getElementById("nav-toggle");
+  if (toggle) {
+    const sync = () => toggle.setAttribute("aria-expanded", toggle.checked ? "true" : "false");
+    toggle.addEventListener("change", sync);
+    sync();
+  }
+
+  // aktivní položka menu (funguje i pro "/")
+  const path = location.pathname.split("/").pop();
+  const current = path && path.length ? path : "index.html";
+
   document.querySelectorAll(".menu a").forEach(a=>{
-    if(a.getAttribute("href") === path) a.classList.add("active");
+    const href = a.getAttribute("href");
+    if ((current === "index.html" && (href === "/" || href === "index.html")) || href === current) {
+      a.classList.add("active");
+    }
+  });
+
+  // zavřít mobilní menu po kliku
+  document.querySelectorAll(".menu a").forEach(a=>{
+    a.addEventListener("click", ()=>{ if(toggle) toggle.checked=false; });
   });
 </script>
 

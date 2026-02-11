@@ -3,19 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Apartmány – Pod Křížovou horou</title>
-  <meta name="description" content="Apartmány Pod Křížovou horou – plánovaná část projektu. Klidné ubytování s důrazem na soukromí a atmosféru místa.">
+  <meta name="description" content="Apartmány Pod Křížovou horou – klidné ubytování s důrazem na soukromí a atmosféru místa. Koncept 10 tematických apartmánů (A1–A10).">
   <link rel="canonical" href="https://podkrizovouhorou.cz/apartmany.html">
   <meta name="theme-color" content="#173A2F">
+  <meta name="robots" content="index,follow">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Apartmány – Pod Křížovou horou">
-  <meta property="og:description" content="Apartmány Pod Křížovou horou – plánovaná část projektu. Klidné ubytování s důrazem na soukromí a atmosféru místa.">
+  <meta property="og:description" content="Klidné ubytování s důrazem na soukromí a atmosféru místa. Koncept 10 tematických apartmánů (A1–A10).">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://podkrizovouhorou.cz/apartmany.html">
+  <meta property="og:locale" content="cs_CZ">
+  <!-- OG image doplníme později -->
+  <!-- <meta property="og:image" content="https://podkrizovouhorou.cz/assets/og/og-image.jpg"> -->
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Apartmány – Pod Křížovou horou">
-  <meta name="twitter:description" content="Apartmány Pod Křížovou horou – plánovaná část projektu. Klidné ubytování s důrazem na soukromí a atmosféru místa.">
+  <meta name="twitter:description" content="Klidné ubytování s důrazem na soukromí a atmosféru místa. Koncept 10 tematických apartmánů (A1–A10).">
+
+  <link rel="icon" href="/favicon.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,15 +36,17 @@
 
 <header class="header">
   <div class="container nav">
-    <a class="brand" href="index.html" aria-label="Pod Křížovou horou – úvod">Pod Křížovou horou</a>
+    <a class="brand" href="/" aria-label="Pod Křížovou horou – úvod">Pod Křížovou horou</a>
 
-    <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Otevřít menu">
+    <input class="nav-toggle" type="checkbox" id="nav-toggle"
+      aria-label="Otevřít menu" aria-controls="main-menu" aria-expanded="false">
+
     <label class="hamburger" for="nav-toggle" aria-hidden="true">
       <span></span><span></span><span></span>
     </label>
 
-    <nav class="menu" aria-label="Hlavní menu">
-      <a href="index.html">Úvod</a>
+    <nav class="menu" id="main-menu" aria-label="Hlavní menu">
+      <a href="/">Úvod</a>
       <a href="apartmany.html">Apartmány</a>
       <a href="caravanpark.html">Caravanpark</a>
       <a href="bistro.html">Bistro</a>
@@ -45,31 +56,123 @@
   </div>
 </header>
 
-<main class="main container">
-  <div class="page-hero">
+<main class="main">
+  <section class="page-hero container">
     <div class="kicker">Apartmány</div>
-    <h1>Apartmány</h1>
-    <p class="muted">Plánovaná část projektu – klidné ubytování s důrazem na soukromí a atmosféru místa.</p>
-  </div>
-
-  <div class="card">
-    <span class="badge">V přípravě</span>
-    <h2>Co připravujeme</h2>
-    <p>
-      Apartmány budou navrženy tak, aby působily jednoduše, čistě a kvalitně.
-      Nejde o masový resort – spíš o komorní místo pro hosty, kteří hledají klid.
+    <h1>Ubytování s příběhem</h1>
+    <p class="muted">
+      Koncept 10 apartmánů (A1–A10) inspirovaných zastaveními křížové cesty. Každý má svůj charakter, atmosféru a náladu.
     </p>
-    <ul class="list">
-      <li>klidný charakter a respekt k lokalitě</li>
-      <li>funkční dispozice a snadná orientace</li>
-      <li>postupná realizace po etapách</li>
-    </ul>
+    <div class="spacer-12"></div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="kontakt.html">Mám zájem o novinky</a>
+      <a class="btn btn-ghost" href="vizualizace.html">Vizualizace projektu</a>
+    </div>
+  </section>
 
-    <p class="note">
-      Chceš být mezi prvními, kdo se dozví detaily?
-      Napiš nám na <a href="mailto:info@podkrizovouhorou.cz">info@podkrizovouhorou.cz</a>.
-    </p>
-  </div>
+  <section class="section container">
+    <div class="section-head">
+      <h2>Apartmány A1–A10</h2>
+      <p class="muted">Zatím koncept a atmosféra. Konkrétní parametry (m², kapacita, vybavení) doplníme v další etapě.</p>
+    </div>
+
+    <div class="grid-3">
+      <!-- A1 -->
+      <article class="card">
+        <span class="badge">A1 – Oliva</span>
+        <h3>Klid na začátku cesty</h3>
+        <p class="muted">„Když víš, že tě čeká náročná cesta, zastavíš se pod stromem…“</p>
+        <p>Interiér v přírodních tónech, olivová zeleň, světlé dřevo a textilie. Tiché zázemí pro ztišení.</p>
+        <div class="note">Vizualizace bude doplněna.</div>
+      </article>
+
+      <!-- A2 -->
+      <article class="card">
+        <span class="badge">A2 – Veronika</span>
+        <h3>Jemnost a lidské teplo</h3>
+        <p class="muted">„Ne každý dokáže zvednout tíhu. Ale každý může podat kapesník.“</p>
+        <p>Pastelové tóny, měkké textilie, tlumené světlo. Pocit bezpečí a blízkosti.</p>
+        <div class="note">Vizualizace bude doplněna.</div>
+      </article>
+
+      <!-- A3 -->
+      <article class="card">
+        <span class="badge">A3 – Naděje</span>
+        <h3>Nový začátek</h3>
+        <p class="muted">„Naděje není jistota, ale volba jít dál.“</p>
+        <p>Vzdušný prostor, světlo, bílá a žlutá. Otevřený interiér, který dává prostor.</p>
+        <div class="note">Vizualizace bude doplněna.</div>
+      </article>
+
+      <!-- A4 -->
+      <article class="card">
+        <span class="badge">A4 – Světlo</span>
+        <h3>Čistota a klid</h3>
+        <p class="muted">„Ještě před úsvitem je největší tma. Pak přijde první paprsek…“</p>
+        <p>Minimalistický interiér s důrazem na světlo, bílá, zrcadla, prosvětlený prostor.</p>
+        <div class="note">Vizualizace bude doplněna.</div>
+      </article>
+
+      <!-- A5 -->
+      <article class="card">
+        <span class="badge">A5 – Dotek</span>
+        <h3>Blízkost a podpora</h3>
+        <p class="muted">„Nemusíš nést cizí kříž, stačí být vedle.“</p>
+        <p>Teplé tóny, oblé tvary, lněné závěsy, keramika. Pocit péče a domácnosti.</p>
+        <div class="note">Vizualizace bude doplněna.</div>
+      </article>
+
+      <!-- A6 -->
+      <article class="card">
+        <span class="badge">A6 – Ticho</span>
+        <h3>Prostor pro sebe</h3>
+        <p class="muted">„Ticho nelže. Ticho ví.“</p>
+        <p>Tlumené barvy, akusticky měkké materiály, čtecí koutek. Jednoduchost bez rozptýlení.</p>
+        <div class="note">Vizualizace bude doplněna.</div>
+      </article>
+
+      <!-- A7 -->
+      <article class="card">
+        <span class="badge">A7 – Oběť</span>
+        <h3>Pravdivost a jednoduchost</h3>
+        <p class="muted">„Odevzdání není slabost. Je to síla pustit to, co tě svazuje.“</p>
+        <p>Surové dřevo, kámen, minimum dekorací. Tlumené světlo, zemitý charakter.</p>
+        <div class="note">Vizualizace bude doplněna.</div>
+      </article>
+
+      <!-- A8 -->
+      <article class="card">
+        <span class="badge">A8 – Nebo</span>
+        <h3>Vzdušnost a výhled</h3>
+        <p class="muted">„Hlava vzhůru. I když nohy klopýtají, vždycky se můžeš podívat nahoru.“</p>
+        <p>Světle modré tóny, lehké závěsy, prosklené plochy. Interiér „dýchá“.</p>
+        <div class="note">Vizualizace bude doplněna.</div>
+      </article>
+
+      <!-- A9 -->
+      <article class="card">
+        <span class="badge">A9 – Kříž</span>
+        <h3>Opravdovost</h3>
+        <p class="muted">„Někdy neseš, co sis nevybral. Ale i to tě může přivést k cíli.“</p>
+        <p>Tmavší dřevo, kovové detaily, minimalistické uspořádání. Hloubka a klid.</p>
+        <div class="note">Vizualizace bude doplněna.</div>
+      </article>
+
+      <!-- A10 -->
+      <article class="card">
+        <span class="badge">A10 – Cesta</span>
+        <h3>Společný čas</h3>
+        <p class="muted">„Každý máme jinou cestu. Ale někdy se potkáme.“</p>
+        <p>Největší apartmán pro sdílení. Velký stůl, variabilní dispozice, propojené zóny.</p>
+        <div class="note">Vizualizace bude doplněna.</div>
+      </article>
+    </div>
+
+    <div class="note">
+      Chceš být mezi prvními, kdo se dozví konkrétní termíny a parametry? Napiš na
+      <a href="mailto:info@podkrizovouhorou.cz">info@podkrizovouhorou.cz</a>.
+    </div>
+  </section>
 </main>
 
 <footer class="footer">
@@ -85,12 +188,28 @@
 </footer>
 
 <script>
-  const path = location.pathname.split("/").pop() || "index.html";
+  // a11y: aria-expanded sync
+  const toggle = document.getElementById("nav-toggle");
+  if (toggle) {
+    const sync = () => toggle.setAttribute("aria-expanded", toggle.checked ? "true" : "false");
+    toggle.addEventListener("change", sync);
+    sync();
+  }
+
+  // aktivní položka menu (funguje i pro "/")
+  const path = location.pathname.split("/").pop();
+  const current = path && path.length ? path : "index.html";
+
   document.querySelectorAll(".menu a").forEach(a=>{
-    if(a.getAttribute("href") === path) a.classList.add("active");
+    const href = a.getAttribute("href");
+    if ((current === "index.html" && (href === "/" || href === "index.html")) || href === current) {
+      a.classList.add("active");
+    }
   });
+
+  // zavřít mobilní menu po kliku
   document.querySelectorAll(".menu a").forEach(a=>{
-    a.addEventListener("click", ()=>{ const t=document.getElementById("nav-toggle"); if(t) t.checked=false; });
+    a.addEventListener("click", ()=>{ if(toggle) toggle.checked=false; });
   });
 </script>
 
