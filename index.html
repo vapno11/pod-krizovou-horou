@@ -3,8 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pod Křížovou horou – projekt v Lužických horách</title>
-  <meta name="description" content="Pod Křížovou horou – klidné místo v Lužických horách. Caravanpark, plánované apartmány a bistro.">
+  
+  <title>Pod Křížovou horou – klidné místo v Lužických horách</title>
+  <meta name="description" content="Pod Křížovou horou – komorní projekt v Lužických horách. Caravanpark, budoucí apartmány a bistro Citroën HY. Klid, příroda a postupný rozvoj.">
+
+  <link rel="canonical" href="https://podkrizovouhorou.cz/">
+
+  <meta property="og:title" content="Pod Křížovou horou">
+  <meta property="og:description" content="Klidné místo v Lužických horách. Caravanpark, apartmány a bistro.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://podkrizovouhorou.cz/">
+  <meta property="og:image" content="https://podkrizovouhorou.cz/assets/og/og-image.jpg">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,27 +36,35 @@
 <section class="hero">
   <div class="container">
     <h1>Pod Křížovou horou</h1>
-    <p>Projekt v Lužických horách: klidné zázemí pro cestovatele, budoucí apartmány, caravanpark a prostor pro setkávání. Vše postupně a citlivě.</p>
+    <p>
+      Komorní projekt v Lužických horách.
+      Klidné zázemí pro cestovatele, budoucí apartmány,
+      caravanpark a místo pro setkávání.
+      Postupně, citlivě a bez masového provozu.
+    </p>
   </div>
 </section>
 
 <main class="main container">
+
   <div class="card">
     <span class="badge">O projektu</span>
     <h2>Klid, příroda, jednoduchost</h2>
     <p>
-      Pod Křížovou horou vzniká místo pro odpočinek a pobyt v přírodě. Projekt je navržen modulárně – jednotlivé části budou uváděny do provozu postupně
-      podle připravenosti a sezóny.
+      Pod Křížovou horou vzniká místo pro odpočinek a pobyt v přírodě.
+      Projekt je navržen modulárně – jednotlivé části budou uváděny do provozu postupně,
+      s respektem k okolí i charakteru lokality.
     </p>
     <p class="note">
-      Aktuálně: web slouží jako přehled projektu a kontaktní místo. Termíny a provozní detaily budeme doplňovat průběžně.
+      Web slouží jako přehled projektu a kontaktní místo.
+      Termíny a provozní detaily budeme doplňovat průběžně.
     </p>
   </div>
 
   <div class="grid">
     <a class="card card-link" href="apartmany.html">
       <h2>Apartmány</h2>
-      <p>Plánované ubytování s důrazem na klid a atmosféru.</p>
+      <p>Plánované ubytování s důrazem na soukromí a atmosféru.</p>
     </a>
 
     <a class="card card-link" href="caravanpark.html">
@@ -59,10 +77,19 @@
       <p>Bistro Citroën HY jako neformální místo pro krátké zastavení.</p>
     </a>
   </div>
+
 </main>
 
 <footer class="footer">
-  <div class="container">© Pod Křížovou horou</div>
+  <div class="container">© 2026 Pod Křížovou horou</div>
 </footer>
 
-<scr
+<script>
+  const path = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".menu a").forEach(a=>{
+    if(a.getAttribute("href") === path) a.classList.add("active");
+  });
+</script>
+
+</body>
+</html>
