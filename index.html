@@ -3,26 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
   <title>Pod Křížovou horou – klidné místo v Lužických horách</title>
-  <meta name="description" content="Pod Křížovou horou – komorní projekt v Lužických horách. Caravanpark, budoucí apartmány a bistro Citroën HY. Klid, příroda a postupný rozvoj.">
-
+  <meta name="description" content="Komorní projekt ubytování a zázemí pro cestovatele v Lužických horách: apartmány, caravanpark a bistro Citroën HY.">
   <link rel="canonical" href="https://podkrizovouhorou.cz/">
+  <meta name="theme-color" content="#173A2F">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Pod Křížovou horou">
-  <meta property="og:description" content="Klidné místo v Lužických horách. Caravanpark, apartmány a bistro.">
+  <meta property="og:description" content="Komorní projekt ubytování a zázemí pro cestovatele v Lužických horách: apartmány, caravanpark a bistro Citroën HY.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://podkrizovouhorou.cz/">
-  <meta property="og:image" content="https://podkrizovouhorou.cz/assets/og/og-image.jpg">
+  <!-- OG image doplníme později -->
+  <!-- <meta property="og:image" content="https://podkrizovouhorou.cz/assets/og/og-image.jpg"> -->
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pod Křížovou horou">
+  <meta name="twitter:description" content="Komorní projekt ubytování a zázemí pro cestovatele v Lužických horách: apartmány, caravanpark a bistro Citroën HY.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-home">
 
 <header class="header">
   <div class="container nav">
-    <div class="brand">Pod Křížovou horou</div>
-    <nav class="menu">
+    <a class="brand" href="index.html" aria-label="Pod Křížovou horou – úvod">Pod Křížovou horou</a>
+
+    <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Otevřít menu">
+    <label class="hamburger" for="nav-toggle" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="menu" aria-label="Hlavní menu">
       <a href="index.html">Úvod</a>
       <a href="apartmany.html">Apartmány</a>
       <a href="caravanpark.html">Caravanpark</a>
@@ -33,61 +49,118 @@
   </div>
 </header>
 
-<section class="hero">
-  <div class="container">
-    <h1>Pod Křížovou horou</h1>
-    <p>
-      Komorní projekt v Lužických horách.
-      Klidné zázemí pro cestovatele, budoucí apartmány,
-      caravanpark a místo pro setkávání.
-      Postupně, citlivě a bez masového provozu.
-    </p>
-  </div>
-</section>
+<main>
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-badge">Komorní místo. Klid. Atmosféra.</div>
+      <h1>Pod Křížovou horou</h1>
+      <p class="hero-lead">
+        Projekt v Lužických horách: apartmány, caravanpark a bistro v&nbsp;Citroënu HY.
+        Bez masového resortu — s důrazem na ticho, kvalitu a důvěryhodnost.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="apartmany.html">Prohlédnout apartmány</a>
+        <a class="btn btn-ghost" href="vizualizace.html">Vizualizace projektu</a>
+      </div>
 
-<main class="main container">
+      <div class="hero-metrics">
+        <div class="metric">
+          <div class="metric-k">10</div>
+          <div class="metric-v">apartmánů<br><span>(cílový stav)</span></div>
+        </div>
+        <div class="metric">
+          <div class="metric-k">Caravan</div>
+          <div class="metric-v">parkování<br><span>pro cestovatele</span></div>
+        </div>
+        <div class="metric">
+          <div class="metric-k">HY</div>
+          <div class="metric-v">bistro na kolech<br><span>Citroën HY</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-    <span class="badge">O projektu</span>
-    <h2>Klid, příroda, jednoduchost</h2>
-    <p>
-      Pod Křížovou horou vzniká místo pro odpočinek a pobyt v přírodě.
-      Projekt je navržen modulárně – jednotlivé části budou uváděny do provozu postupně,
-      s respektem k okolí i charakteru lokality.
-    </p>
-    <p class="note">
-      Web slouží jako přehled projektu a kontaktní místo.
-      Termíny a provozní detaily budeme doplňovat průběžně.
-    </p>
-  </div>
+  <section class="section container">
+    <div class="section-head">
+      <h2>Co tady vzniká</h2>
+      <p class="muted">Tři pilíře jednoho komorního místa — v jednotném stylu a s postupným rozvojem.</p>
+    </div>
 
-  <div class="grid">
-    <a class="card card-link" href="apartmany.html">
-      <h2>Apartmány</h2>
-      <p>Plánované ubytování s důrazem na soukromí a atmosféru.</p>
-    </a>
+    <div class="grid-3">
+      <a class="card card-link" href="apartmany.html">
+        <span class="badge">Apartmány</span>
+        <h3>Ubytování s příběhem</h3>
+        <p>Klidné apartmány s důrazem na soukromí, čistotu a atmosféru. Inspirace zastaveními křížové cesty.</p>
+        <div class="card-cta">Zjistit více →</div>
+      </a>
 
-    <a class="card card-link" href="caravanpark.html">
-      <h2>Caravanpark</h2>
-      <p>Stání pro karavany a obytné vozy – malé, přehledné a tiché.</p>
-    </a>
+      <a class="card card-link" href="caravanpark.html">
+        <span class="badge">Caravanpark</span>
+        <h3>Zastávka pro cestu</h3>
+        <p>Jednoduché, bezpečné a kultivované stání pro karavany. Přesně to, co potřebuješ po dni na cestách.</p>
+        <div class="card-cta">Zjistit více →</div>
+      </a>
 
-    <a class="card card-link" href="bistro.html">
-      <h2>Bistro</h2>
-      <p>Bistro Citroën HY jako neformální místo pro krátké zastavení.</p>
-    </a>
-  </div>
+      <a class="card card-link" href="bistro.html">
+        <span class="badge">Bistro</span>
+        <h3>Citroën HY</h3>
+        <p>Pojízdné bistro — káva, nealko a drobné občerstvení. Bez hluku, bez přehnaností, s charakterem.</p>
+        <div class="card-cta">Zjistit více →</div>
+      </a>
+    </div>
+  </section>
 
+  <section class="section container">
+    <div class="split">
+      <div>
+        <h2>Prémiové neznamená okázalé</h2>
+        <p class="muted">
+          Cíl je jednoduchý: aby web i projekt působily klidně, jistě a profesionálně.
+          Postupně doplníme fotky, vizualizace, konkrétní vybavení a detaily etap.
+        </p>
+        <ul class="list">
+          <li>minimalistický design a přehlednost</li>
+          <li>rychlé načítání a čistý kód</li>
+          <li>SEO základ pro dlouhodobý růst</li>
+        </ul>
+        <div class="spacer-12"></div>
+        <a class="btn btn-primary" href="kontakt.html">Chci být u toho</a>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Aktuální stav</div>
+        <div class="panel-row"><span>Web</span><strong>online</strong></div>
+        <div class="panel-row"><span>SEO</span><strong>základ hotov</strong></div>
+        <div class="panel-row"><span>Vizualizace</span><strong>k dispozici</strong></div>
+        <div class="panel-row"><span>Další krok</span><strong>design + obsah</strong></div>
+        <div class="panel-note">Pozn.: Fotky/OG obrázek doplníme v dalším kroku.</div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="footer">
-  <div class="container">© 2026 Pod Křížovou horou</div>
+  <div class="container">
+    <div class="footer-row">
+      <div>© Pod Křížovou horou</div>
+      <div class="footer-links">
+        <a href="kontakt.html">Kontakt</a>
+        <a href="vizualizace.html">Vizualizace</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script>
+  // aktivní položka menu
   const path = location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".menu a").forEach(a=>{
     if(a.getAttribute("href") === path) a.classList.add("active");
+  });
+  // zavřít mobilní menu po kliku
+  document.querySelectorAll(".menu a").forEach(a=>{
+    a.addEventListener("click", ()=>{ const t=document.getElementById("nav-toggle"); if(t) t.checked=false; });
   });
 </script>
 
