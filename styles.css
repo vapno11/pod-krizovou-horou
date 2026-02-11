@@ -371,3 +371,33 @@ p{ margin: 0 0 12px 0; max-width: 70ch; }
   .hero{ padding: 52px 0 42px; }
   .hero-metrics{ grid-template-columns: 1fr; }
 }
+
+/* =========================================================
+   Apartmány – silnější názvy (PŘIDEJ NA KONEC styles.css)
+   Pozn.: funguje jen pokud je v apartmany.html:
+   <body class="page-apartmany">
+   ========================================================= */
+
+body.page-apartmany .card h3{
+  font-size: clamp(22px, 2.6vw, 30px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: .15px;
+  color: var(--brand-2);
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+body.page-apartmany .badge{
+  font-size: 13px;
+  padding: 7px 12px;
+  margin-bottom: 12px;
+  border-color: rgba(23,58,47,.16);
+  background: rgba(23,58,47,.08);
+  color: var(--brand);
+}
+
+/* jemně zvednout první "výrazný" text, pokud někde používáš <strong> v popisu */
+body.page-apartmany .card p strong{
+  color: var(--brand-2);
+}
