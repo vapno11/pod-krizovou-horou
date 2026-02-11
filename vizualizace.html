@@ -7,6 +7,7 @@
   <title>Vizualizace – Pod Křížovou horou</title>
   <meta name="description" content="Vizualizace projektu Pod Křížovou horou – exteriéry, interiéry a návrhy od architekta.">
   <link rel="canonical" href="https://podkrizovouhorou.cz/vizualizace.html">
+  <meta name="theme-color" content="#173A2F">
   <meta name="robots" content="index,follow">
 
   <!-- Open Graph -->
@@ -14,6 +15,8 @@
   <meta property="og:description" content="Vizualizace projektu Pod Křížovou horou – exteriéry, interiéry a návrhy od architekta.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://podkrizovouhorou.cz/vizualizace.html">
+  <meta property="og:locale" content="cs_CZ">
+  <!-- Pokud necháš OG obrázek už teď, super – jen ať existuje na URL -->
   <meta property="og:image" content="https://podkrizovouhorou.cz/assets/og-image.jpg">
 
   <!-- Twitter -->
@@ -22,22 +25,79 @@
   <meta name="twitter:description" content="Vizualizace projektu Pod Křížovou horou – exteriéry, interiéry a návrhy od architekta.">
   <meta name="twitter:image" content="https://podkrizovouhorou.cz/assets/og-image.jpg">
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="styles.css?v=20260211">
+
+
+  <!-- Galerie + lightbox (minimalisticky sladěno se styles.css) -->
   <style>
     .gallery{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
-    @media (max-width: 900px){ .gallery{ grid-template-columns:1fr; } }
-    .thumb{ border-radius:14px; overflow:hidden; border:1px solid var(--border); background:#fff; cursor:pointer; }
+    @media (max-width: 980px){ .gallery{ grid-template-columns:1fr; } }
+
+    .thumb{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid rgba(23,58,47,.14);
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      cursor:pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .thumb:hover{ transform: translateY(-2px); box-shadow: var(--shadow); }
     .thumb img{ display:block; width:100%; height:auto; }
     .cap{ padding:10px 12px; font-size:14px; color:var(--muted); }
-    .lightbox{ position:fixed; inset:0; background:rgba(0,0,0,.75); display:none; align-items:center; justify-content:center; padding:18px; z-index:50; }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.78);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:60;
+    }
     .lightbox.open{ display:flex; }
     .lb-inner{ max-width:1100px; width:100%; }
-    .lb-head{ display:flex; align-items:center; justify-content:space-between; color:#fff; margin-bottom:10px; }
-    .lb-title{ font-size:14px; opacity:.9; }
-    .lb-close{ border:0; background:transparent; color:#fff; font-size:26px; cursor:pointer; line-height:1; padding:6px 10px; }
-    .lb-img{ width:100%; height:auto; border-radius:14px; background:#111; }
-    .lb-nav{ display:flex; gap:10px; }
-    .lb-btn{ border:1px solid rgba(255,255,255,.35); background:rgba(0,0,0,.25); color:#fff; padding:8px 10px; border-radius:10px; cursor:pointer; }
+    .lb-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      color:#fff;
+      margin-bottom:10px;
+      gap: 10px;
+    }
+    .lb-title{ font-size:14px; opacity:.92; }
+    .lb-nav{ display:flex; gap:10px; align-items:center; }
+
+    .lb-btn{
+      border:1px solid rgba(255,255,255,.35);
+      background:rgba(0,0,0,.25);
+      color:#fff;
+      padding:8px 10px;
+      border-radius:10px;
+      cursor:pointer;
+    }
+    .lb-btn:hover{ background:rgba(0,0,0,.40); }
+
+    .lb-close{
+      border:0;
+      background:transparent;
+      color:#fff;
+      font-size:26px;
+      cursor:pointer;
+      line-height:1;
+      padding:6px 10px;
+      border-radius: 10px;
+    }
+    .lb-close:hover{ background: rgba(255,255,255,.08); }
+
+    .lb-img{
+      width:100%;
+      height:auto;
+      border-radius: var(--radius);
+      background:#111;
+    }
   </style>
 
   <script type="application/ld+json">
@@ -60,9 +120,17 @@
 
 <header class="header">
   <div class="container nav">
-    <div class="brand">Pod Křížovou horou</div>
-    <nav class="menu">
-      <a href="index.html">Úvod</a>
+    <a class="brand" href="/" aria-label="Pod Křížovou horou – úvod">Pod Křížovou horou</a>
+
+    <input class="nav-toggle" type="checkbox" id="nav-toggle"
+      aria-label="Otevřít menu" aria-controls="main-menu" aria-expanded="false">
+
+    <label class="hamburger" for="nav-toggle" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="menu" id="main-menu" aria-label="Hlavní menu">
+      <a href="/">Úvod</a>
       <a href="apartmany.html">Apartmány</a>
       <a href="caravanpark.html">Caravanpark</a>
       <a href="bistro.html">Bistro</a>
@@ -72,76 +140,113 @@
   </div>
 </header>
 
-<main class="main container">
+<main class="main">
+  <section class="page-hero container">
+    <div class="kicker">Vizualizace</div>
+    <h1>Návrhy od architekta</h1>
+    <p class="muted">Kliknutím na náhled se obrázek otevře ve velkém. Šipkami můžeš procházet další vizualizace.</p>
+  </section>
 
-  <div class="card">
-    <span class="badge">Návrhy od architekta</span>
-    <h1>Vizualizace</h1>
-    <p>Kliknutím na náhled se obrázek otevře ve velkém.</p>
-  </div>
+  <section class="section container">
+    <div class="card">
+      <span class="badge">Exteriér</span>
+      <h2>Exteriér</h2>
 
-  <div class="card">
-    <h2>Exteriér</h2>
-    <div class="gallery">
-      <div class="thumb" data-full="assets/vizualizace/exterier-01.jpg" data-title="Exteriér – pohled 1">
-        <img src="assets/vizualizace/exterier-01.jpg" alt="Exteriér – pohled 1">
-        <div class="cap">Exteriér – pohled 1</div>
-      </div>
-      <div class="thumb" data-full="assets/vizualizace/exterier-02.jpg" data-title="Exteriér – pohled 2">
-        <img src="assets/vizualizace/exterier-02.jpg" alt="Exteriér – pohled 2">
-        <div class="cap">Exteriér – pohled 2</div>
-      </div>
-      <div class="thumb" data-full="assets/vizualizace/exterier-03.jpg" data-title="Exteriér – pohled 3">
-        <img src="assets/vizualizace/exterier-03.jpg" alt="Exteriér – pohled 3">
-        <div class="cap">Exteriér – pohled 3</div>
+      <div class="gallery" aria-label="Galerie exteriéru">
+        <div class="thumb" role="button" tabindex="0" data-full="assets/vizualizace/exterier-01.jpg" data-title="Exteriér – pohled 1">
+          <img src="assets/vizualizace/exterier-01.jpg" alt="Exteriér – pohled 1">
+          <div class="cap">Exteriér – pohled 1</div>
+        </div>
+        <div class="thumb" role="button" tabindex="0" data-full="assets/vizualizace/exterier-02.jpg" data-title="Exteriér – pohled 2">
+          <img src="assets/vizualizace/exterier-02.jpg" alt="Exteriér – pohled 2">
+          <div class="cap">Exteriér – pohled 2</div>
+        </div>
+        <div class="thumb" role="button" tabindex="0" data-full="assets/vizualizace/exterier-03.jpg" data-title="Exteriér – pohled 3">
+          <img src="assets/vizualizace/exterier-03.jpg" alt="Exteriér – pohled 3">
+          <div class="cap">Exteriér – pohled 3</div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="card">
-    <h2>Interiér</h2>
-    <div class="gallery">
-      <div class="thumb" data-full="assets/vizualizace/interier-01.jpg" data-title="Interiér – pohled 1">
-        <img src="assets/vizualizace/interier-01.jpg" alt="Interiér – pohled 1">
-        <div class="cap">Interiér – pohled 1</div>
+  <section class="section container">
+    <div class="card">
+      <span class="badge">Interiér</span>
+      <h2>Interiér</h2>
+
+      <div class="gallery" aria-label="Galerie interiéru">
+        <div class="thumb" role="button" tabindex="0" data-full="assets/vizualizace/interier-01.jpg" data-title="Interiér – pohled 1">
+          <img src="assets/vizualizace/interier-01.jpg" alt="Interiér – pohled 1">
+          <div class="cap">Interiér – pohled 1</div>
+        </div>
+        <div class="thumb" role="button" tabindex="0" data-full="assets/vizualizace/interier-02.jpg" data-title="Interiér – pohled 2">
+          <img src="assets/vizualizace/interier-02.jpg" alt="Interiér – pohled 2">
+          <div class="cap">Interiér – pohled 2</div>
+        </div>
+        <div class="thumb" role="button" tabindex="0" data-full="assets/vizualizace/interier-03.jpg" data-title="Interiér – pohled 3">
+          <img src="assets/vizualizace/interier-03.jpg" alt="Interiér – pohled 3">
+          <div class="cap">Interiér – pohled 3</div>
+        </div>
       </div>
-      <div class="thumb" data-full="assets/vizualizace/interier-02.jpg" data-title="Interiér – pohled 2">
-        <img src="assets/vizualizace/interier-02.jpg" alt="Interiér – pohled 2">
-        <div class="cap">Interiér – pohled 2</div>
-      </div>
-      <div class="thumb" data-full="assets/vizualizace/interier-03.jpg" data-title="Interiér – pohled 3">
-        <img src="assets/vizualizace/interier-03.jpg" alt="Interiér – pohled 3">
-        <div class="cap">Interiér – pohled 3</div>
+
+      <div class="note">
+        Jakmile doplníme další vizualizace (caravanpark / bistro / detaily apartmánů), přidáme další sekce.
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lb-inner">
       <div class="lb-head">
         <div class="lb-title" id="lbTitle">Náhled</div>
         <div class="lb-nav">
-          <button class="lb-btn" id="lbPrev" type="button">←</button>
-          <button class="lb-btn" id="lbNext" type="button">→</button>
+          <button class="lb-btn" id="lbPrev" type="button" aria-label="Předchozí">←</button>
+          <button class="lb-btn" id="lbNext" type="button" aria-label="Další">→</button>
           <button class="lb-close" id="lbClose" type="button" aria-label="Zavřít">×</button>
         </div>
       </div>
       <img class="lb-img" id="lbImg" alt="">
     </div>
   </div>
-
 </main>
 
 <footer class="footer">
-  <div class="container">© 2026 Pod Křížovou horou</div>
+  <div class="container">
+    <div class="footer-row">
+      <div>© Pod Křížovou horou</div>
+      <div class="footer-links">
+        <a href="kontakt.html">Kontakt</a>
+        <a href="vizualizace.html">Vizualizace</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script>
-  const path = location.pathname.split("/").pop() || "index.html";
+  // a11y: aria-expanded sync
+  const toggle = document.getElementById("nav-toggle");
+  if (toggle) {
+    const sync = () => toggle.setAttribute("aria-expanded", toggle.checked ? "true" : "false");
+    toggle.addEventListener("change", sync);
+    sync();
+  }
+
+  // aktivní položka menu (funguje i pro "/")
+  const path = location.pathname.split("/").pop();
+  const current = path && path.length ? path : "index.html";
   document.querySelectorAll(".menu a").forEach(a=>{
-    if(a.getAttribute("href") === path) a.classList.add("active");
+    const href = a.getAttribute("href");
+    if ((current === "index.html" && (href === "/" || href === "index.html")) || href === current) {
+      a.classList.add("active");
+    }
   });
 
+  // zavřít mobilní menu po kliku
+  document.querySelectorAll(".menu a").forEach(a=>{
+    a.addEventListener("click", ()=>{ if(toggle) toggle.checked=false; });
+  });
+
+  // Lightbox
   const thumbs = Array.from(document.querySelectorAll(".thumb"));
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lbImg");
@@ -169,7 +274,14 @@
   function prev(){ openLB((idx - 1 + thumbs.length) % thumbs.length); }
   function next(){ openLB((idx + 1) % thumbs.length); }
 
-  thumbs.forEach((t,i)=> t.addEventListener("click", ()=>openLB(i)));
+  // klik + klávesnice na náhledech
+  thumbs.forEach((t,i)=>{
+    t.addEventListener("click", ()=>openLB(i));
+    t.addEventListener("keydown", (e)=>{
+      if(e.key === "Enter" || e.key === " ") { e.preventDefault(); openLB(i); }
+    });
+  });
+
   btnClose.addEventListener("click", closeLB);
   btnPrev.addEventListener("click", prev);
   btnNext.addEventListener("click", next);
