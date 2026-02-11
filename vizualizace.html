@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vizualizace – Pod Křížovou horou</title>
+  <meta name="description" content="Vizualizace projektu Pod Křížovou horou – exteriéry, interiéry a návrhy.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .gallery{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    @media (max-width: 900px){ .gallery{ grid-template-columns:1fr; } }
+    .thumb{ border-radius:14px; overflow:hidden; border:1px solid var(--border); background:#fff; cursor:pointer; transition:transform .12s ease; }
+    .thumb:hover{ transform: translateY(-2px); }
+    .thumb img{ width:100%; height:220px; object-fit:cover; display:block; }
+    .thumb .cap{ padding:10px 12px; font-size:14px; color:var(--muted); }
+
+    .lightbox{ position:fixed; inset:0; background:rgba(0,0,0,.82); display:none; align-items:center; justify-content:center; padding:24px; z-index:9999; }
+    .lightbox.open{ display:flex; }
+    .lightbox-inner{ max-width:1100px; width:100%; }
+    .lightbox img{ width:100%; max-height:80vh; object-fit:contain; border-radius:14px; background:#111; display:block; }
+    .lightbox-bar{ display:flex; justify-content:space-between; align-items:center; margin-top:10px; color:#fff; font-size:14px; opacity:.9; }
+    .lb-btn{ background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); color:#fff; padding:8px 12px; border-radius:10px; cursor:pointer; }
+    .lb-btn:hover{ background:rgba(255,255,255,.18); }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="brand">Pod Křížovou horou</div>
+    <nav class="menu">
+      <a href="index.html">Úvod</a>
+      <a href="apartmany.html">Apartmány</a>
+      <a href="caravanpark.html">Caravanpark</a>
+      <a href="bistro.html">Bistro</a>
+      <a href="vizualizace.html">Vizualizace</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main container">
+  <div class="card">
+    <span class="badge">Návrhy od architekta</span>
+    <h2>Vizualizace</h2>
+    <p>Kliknutím na náhled se obrázek otevře ve velkém.</p>
+  </div>
+
+  <div class="card">
+    <h2>Exteriér</h2>
+    <div class="gallery">
+      <div class="thumb" data-full="assets/vizualizace/exterier-01.jpg" data-title="Exteriér – pohled 1">
+        <img src="assets/vizualizace/exterier-01.jpg" alt="Exteriér – pohled 1">
+        <div class="cap">Exteriér – pohled 1</div>
+      </div>
+      <div class="thumb" data-full="assets/vizualizace/exterier-02.jpg" data-title="Exteriér – pohled 2">
+        <img src="assets/vizualizace/exterier-02.jpg" alt="Exteriér – pohled 2">
+        <div class="cap">Exteriér – pohled 2</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Interiér</h2>
+    <div class="gallery">
+      <div class="thumb" data-full="assets/vizualizace/interier-01.jpg" data-title="Interiér – pohled 1">
+        <img src="assets/vizualizace/interier-01.jpg" alt="Interiér – pohled 1">
+        <div class="cap">Interiér – pohled 1</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Situace</h2>
+    <div class="gallery">
+      <div class="thumb" data-full="assets/vizualizace/situace-01.jpg" data-title="Situace – návrh">
+        <img src="assets/vizualizace/situace-01.jpg" alt="Situace – návrh">
+        <div class="cap">Situace – návrh</div>
+      </div>
+    </div>
+    <p class="note">Pozn.: vizualizace jsou ilustrativní a budou se upřesňovat v průběhu realizace.</p>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">© Pod Křížovou horou</div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <img id="lbImg" src="" alt="">
+    <div class="lightbox-bar">
+      <div id="lbTitle"></div>
+      <div style="display:flex; gap:10px;">
+        <button class="lb-btn" id="lbPrev">◀</button>
+        <button class="lb-btn" id="lbNext">▶</button>
+        <button class="lb-btn" id="lbClose">Zavřít</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const path = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".menu a").forEach(a=>{
+    if(a.getAttribute("href") === path) a.classList.add("active");
+  });
+
+  const thumbs = Array.from(document.querySelectorAll(".thumb"));
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lbImg");
+  const lbTitle = document.getElementById("lbTitle");
+  const btnClose = document.getElementById("lbClose");
+  const btnPrev = document.getElementById("lbPrev");
+  const btnNext = document.getElementById("lbNext");
+  let idx = 0;
+
+  function openLB(i){
+    idx = i;
+    const t = thumbs[idx];
+    lbImg.src = t.dataset.full;
+    lbTitle.textContent = t.dataset.title || "";
+    lb.classList.add("open");
+  }
+  function closeLB(){ lb.classList.remove("open"); }
+  function prev(){ openLB((idx - 1 + thumbs.length) % thumbs.length); }
+  function next(){ openLB((idx + 1) % thumbs.length); }
+
+  thumbs.forEach((t,i)=> t.addEventListener("click", ()=> openLB(i)));
+  btnClose.addEventListener("click", closeLB);
+  btnPrev.addEventListener("click", prev);
+  btnNext.addEventListener("click", next);
+  lb.addEventListener("click", (e)=> { if(e.target === lb) closeLB(); });
+
+  window.addEventListener("keydown", (e)=>{
+    if(!lb.classList.contains("open")) return;
+    if(e.key === "Escape") closeLB();
+    if(e.key === "ArrowLeft") prev();
+    if(e.key === "ArrowRight") next();
+  });
+</script>
+
+</body>
+</html>

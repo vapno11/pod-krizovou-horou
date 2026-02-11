@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caravanpark – Pod Křížovou horou</title>
+  <meta name="description" content="Caravanpark Pod Křížovou horou – klidné stání v Lužických horách.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="brand">Pod Křížovou horou</div>
+    <nav class="menu">
+      <a href="index.html">Úvod</a>
+      <a href="apartmany.html">Apartmány</a>
+      <a href="caravanpark.html">Caravanpark</a>
+      <a href="bistro.html">Bistro</a>
+      <a href="vizualizace.html">Vizualizace</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main container">
+  <div class="card">
+    <span class="badge">Caravanpark</span>
+    <h2>Klidné stání v Lužických horách</h2>
+    <p>
+      Caravanpark je navržen jako malé, přehledné a tiché místo pro karavany
+      a obytné vozy.
+    </p>
+    <ul class="list">
+      <li>komorní charakter (bez masového provozu)</li>
+      <li>zázemí pro cestovatele</li>
+      <li>výchozí bod pro výlety po okolí</li>
+    </ul>
+    <p class="note">
+      Informace o provozu a rezervacích doplníme po spuštění.
+    </p>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">© Pod Křížovou horou</div>
+</footer>
+
+<script>
+  const path = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".menu a").forEach(a=>{
+    if(a.getAttribute("href") === path) a.classList.add("active");
+  });
+</script>
+
+</body>
+</html>

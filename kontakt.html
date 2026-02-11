@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt – Pod Křížovou horou</title>
+  <meta name="description" content="Kontakt na projekt Pod Křížovou horou.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="brand">Pod Křížovou horou</div>
+    <nav class="menu">
+      <a href="index.html">Úvod</a>
+      <a href="apartmany.html">Apartmány</a>
+      <a href="caravanpark.html">Caravanpark</a>
+      <a href="bistro.html">Bistro</a>
+      <a href="vizualizace.html">Vizualizace</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main container">
+  <div class="card">
+    <span class="badge">Kontakt</span>
+    <h2>Zůstaňme v kontaktu</h2>
+    <p>Pro informace, spolupráci nebo budoucí rezervace nám napiš:</p>
+    <p style="font-size:18px;"><strong>info@podkrizovouhorou.cz</strong></p>
+    <p class="note">Ozveme se jen k věcem, které dávají smysl.</p>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">© Pod Křížovou horou</div>
+</footer>
+
+<script>
+  const path = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".menu a").forEach(a=>{
+    if(a.getAttribute("href") === path) a.classList.add("active");
+  });
+</script>
+
+</body>
+</html>

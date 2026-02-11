@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apartmány – Pod Křížovou horou</title>
+  <meta name="description" content="Apartmány Pod Křížovou horou – plánovaná část projektu.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="brand">Pod Křížovou horou</div>
+    <nav class="menu">
+      <a href="index.html">Úvod</a>
+      <a href="apartmany.html">Apartmány</a>
+      <a href="caravanpark.html">Caravanpark</a>
+      <a href="bistro.html">Bistro</a>
+      <a href="vizualizace.html">Vizualizace</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main container">
+  <div class="card">
+    <span class="badge">V přípravě</span>
+    <h2>Apartmány</h2>
+    <p>
+      Apartmány jsou plánovanou částí projektu – cílem je nabídnout klidné ubytování
+      s důrazem na soukromí, funkčnost a atmosféru místa.
+    </p>
+    <ul class="list">
+      <li>klidný charakter a respekt k lokalitě</li>
+      <li>jednoduchý, čistý design</li>
+      <li>postupná realizace po etapách</li>
+    </ul>
+    <p class="note">
+      Chceš být mezi prvními, kdo se dozví detaily?
+      Napiš nám na info@podkrizovouhorou.cz.
+    </p>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">© Pod Křížovou horou</div>
+</footer>
+
+<script>
+  const path = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".menu a").forEach(a=>{
+    if(a.getAttribute("href") === path) a.classList.add("active");
+  });
+</script>
+
+</body>
+</html>
