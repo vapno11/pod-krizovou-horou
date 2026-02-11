@@ -3,16 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Pod Křížovou horou – klidné místo v Lužických horách</title>
   <meta name="description" content="Komorní projekt ubytování a zázemí pro cestovatele v Lužických horách: apartmány, caravanpark a bistro Citroën HY.">
   <link rel="canonical" href="https://podkrizovouhorou.cz/">
   <meta name="theme-color" content="#173A2F">
+  <meta name="robots" content="index,follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Apartmánový dům a caravanpark Pod Křížovou horou">
+  <meta property="og:title" content="Pod Křížovou horou">
   <meta property="og:description" content="Komorní projekt ubytování a zázemí pro cestovatele v Lužických horách: apartmány, caravanpark a bistro Citroën HY.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://podkrizovouhorou.cz/">
+  <meta property="og:locale" content="cs_CZ">
   <!-- OG image doplníme později -->
   <!-- <meta property="og:image" content="https://podkrizovouhorou.cz/assets/og/og-image.jpg"> -->
 
@@ -21,26 +24,29 @@
   <meta name="twitter:title" content="Pod Křížovou horou">
   <meta name="twitter:description" content="Komorní projekt ubytování a zázemí pro cestovatele v Lužických horách: apartmány, caravanpark a bistro Citroën HY.">
 
+  <link rel="icon" href="/favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css?v=20260211">
-
 </head>
 <body class="page-home">
 
 <header class="header">
   <div class="container nav">
-    <a class="brand" href="index.html" aria-label="Pod Křížovou horou – úvod">Pod Křížovou horou</a>
+    <a class="brand" href="/" aria-label="Pod Křížovou horou – úvod">Pod Křížovou horou</a>
 
-    <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Otevřít menu">
+    <input class="nav-toggle" type="checkbox" id="nav-toggle"
+      aria-label="Otevřít menu" aria-controls="main-menu" aria-expanded="false">
+
     <label class="hamburger" for="nav-toggle" aria-hidden="true">
       <span></span><span></span><span></span>
     </label>
 
-    <nav class="menu" aria-label="Hlavní menu">
-      <a href="index.html">Úvod</a>
+    <nav class="menu" id="main-menu" aria-label="Hlavní menu">
+      <a href="/">Úvod</a>
       <a href="apartmany.html">Apartmány</a>
       <a href="caravanpark.html">Caravanpark</a>
       <a href="bistro.html">Bistro</a>
@@ -60,6 +66,7 @@
         Projekt v Lužických horách: apartmány, caravanpark a bistro v&nbsp;Citroënu HY.
         Bez masového resortu — s důrazem na ticho, kvalitu a důvěryhodnost.
       </p>
+
       <div class="hero-cta">
         <a class="btn btn-primary" href="apartmany.html">Prohlédnout apartmány</a>
         <a class="btn btn-ghost" href="vizualizace.html">Vizualizace projektu</a>
@@ -154,14 +161,28 @@
 </footer>
 
 <script>
-  // aktivní položka menu
-  const path = location.pathname.split("/").pop() || "index.html";
+  // a11y: aria-expanded sync
+  const toggle = document.getElementById("nav-toggle");
+  if (toggle) {
+    const sync = () => toggle.setAttribute("aria-expanded", toggle.checked ? "true" : "false");
+    toggle.addEventListener("change", sync);
+    sync();
+  }
+
+  // aktivní položka menu (funguje i pro "/")
+  const path = location.pathname.split("/").pop();
+  const current = path && path.length ? path : "index.html";
+
   document.querySelectorAll(".menu a").forEach(a=>{
-    if(a.getAttribute("href") === path) a.classList.add("active");
+    const href = a.getAttribute("href");
+    if ((current === "index.html" && (href === "/" || href === "index.html")) || href === current) {
+      a.classList.add("active");
+    }
   });
+
   // zavřít mobilní menu po kliku
   document.querySelectorAll(".menu a").forEach(a=>{
-    a.addEventListener("click", ()=>{ const t=document.getElementById("nav-toggle"); if(t) t.checked=false; });
+    a.addEventListener("click", ()=>{ if(toggle) toggle.checked=false; });
   });
 </script>
 
