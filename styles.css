@@ -339,4 +339,5 @@ p{ margin: 0 0 12px 0; max-width: 70ch; }
   font-size: 13px;
   margin-top: 4px;
 }
-.metric-v span{ opacity:.85; }
+.metric-v span{ opacity:.85; 
+}
