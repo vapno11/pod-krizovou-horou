@@ -165,7 +165,7 @@ h1,h2,h3{
 h1{ font-size: clamp(34px, 5vw, 56px); }
 h2{ font-size: clamp(24px, 3.2vw, 34px); }
 
-/* vylepšení pro mobil: h3 je flexibilní */
+/* vylepšení pro mobil: h3 je flexibilní (globálně) */
 h3{ font-size: clamp(18px, 2.2vw, 22px); }
 
 /* čitelnost: omezení délky řádku */
@@ -236,6 +236,10 @@ p{ margin: 0 0 12px 0; max-width: 70ch; }
   border-radius: var(--radius);
   padding: 18px;
   box-shadow: 0 10px 30px rgba(0,0,0,.06);
+
+  /* NOVĚ: umožní zarovnání spodního bloku (note) ke dnu */
+  display: flex;
+  flex-direction: column;
 }
 
 .card-link{
@@ -276,6 +280,10 @@ p{ margin: 0 0 12px 0; max-width: 70ch; }
   border: 1px dashed rgba(23,58,47,.22);
   color: var(--muted);
   background: rgba(247,244,238,.65);
+
+  /* NOVĚ: přilepí "Vizualizace bude doplněna" ke spodní hraně karty */
+  margin-top: auto;
+  margin-bottom: 0;
 }
 
 .card-cta{
@@ -373,19 +381,19 @@ p{ margin: 0 0 12px 0; max-width: 70ch; }
 }
 
 /* =========================================================
-   Apartmány – silnější názvy (PŘIDEJ NA KONEC styles.css)
+   Apartmány – silnější hierarchie (jen na stránce apartmány)
    Pozn.: funguje jen pokud je v apartmany.html:
    <body class="page-apartmany">
    ========================================================= */
 
 body.page-apartmany .card h3{
-  font-size: clamp(22px, 2.6vw, 30px);
-  font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: .15px;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0;
   color: var(--brand-2);
-  margin-top: 2px;
-  margin-bottom: 10px;
+  margin-top: 4px;
+  margin-bottom: 12px;
 }
 
 body.page-apartmany .badge{
