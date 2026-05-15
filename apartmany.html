@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=1005">
+  <link rel="stylesheet" href="styles.css?v=1006">
 </head>
 <body class="page-apartmany">
 
@@ -66,7 +66,7 @@
   <section class="section container">
     <div class="section-head">
       <h2>Přehled apartmánů A1–A10</h2>
-      <p class="muted">Konkrétní parametry (m², kapacitu a přesné vybavení) doplníme v další etapě. Nyní se nechte vést atmosférou jednotlivých zastavení.</p>
+      <p class="muted">Zatím koncept a atmosféra. Konkrétní parametry (m², kapacitu, vybavení) doplníme v další etapě.</p>
     </div>
 
     <div class="apartments-grid">
@@ -115,7 +115,7 @@
         <div class="apt-meta">A6 — TICHO</div>
         <h3>Prostor pro sebe</h3>
         <blockquote class="apt-quote">„Ticho nelže. Ticho ví.“</blockquote>
-        <p class="apt-desc">Tlumené, hluboké barvy, vynikající akustické řešení a měkké materiály. Součástí pokoje je dedikovaný čtecí koutek navržený pro dokonalé rozjímání bez vnějších ruchů.</p>
+        <p class="apt-desc">Tlumené barvy, akusticky měkké materiály, čtecí koutek. Jednoduchost bez rozptýlení.</p>
         <div class="apt-status">Vizualizace bude doplněna</div>
       </div>
 
@@ -155,7 +155,7 @@
 
     <div class="spacer-12"></div>
     <div class="center-text">
-      <p>Chceš být mezi prvními, kdo se dozví konkrétní termíny a parametry? Napište nám na <a href="mailto:info@podkrizovouhorou.cz">info@podkrizovouhorou.cz</a>.</p>
+      <p>Chceš být mezi prvními, kdo se dozví konkrétní termíny a parametry? Napiš nám na <a href="mailto:info@podkrizovouhorou.cz">info@podkrizovouhorou.cz</a>.</p>
     </div>
   </section>
 </main>
@@ -173,7 +173,6 @@
 </footer>
 
 <script>
-  // Aktivace mobilního menu
   const toggle = document.getElementById("nav-toggle");
   if (toggle) {
     const sync = () => toggle.setAttribute("aria-expanded", toggle.checked ? "true" : "false");
@@ -181,7 +180,6 @@
     sync();
   }
 
-  // Aktivní třída v menu podle aktuální URL
   const path = location.pathname.split("/").pop();
   const current = path && path.length ? path : "apartmany.html";
 
