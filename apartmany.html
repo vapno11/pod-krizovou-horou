@@ -1,302 +1,142 @@
-/* ==========================================================================
-   6. SPLIT SEKCE A REZERVAČNÍ PANEL
-   ========================================================================== */
-.split {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 64px;
-  align-items: start;
-}
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apartmány – Pod Křížovou horou</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-.list {
-  list-style: none;
-  margin: 32px 0;
-}
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="brand">Pod Křížovou horou</a>
+      <nav class="menu">
+        <a href="index.html">Úvod</a>
+        <a href="apartmany.html" class="active">Apartmány</a>
+        <a href="#">Caravanpark</a>
+        <a href="#">Bistro</a>
+        <a href="#">Vizualizace</a>
+        <a href="#">Kontakt</a>
+      </nav>
+    </div>
+  </header>
 
-.list li {
-  position: relative;
-  padding-left: 28px;
-  margin-bottom: 16px;
-  font-size: 1.05rem;
-  color: var(--text);
-}
+  <section class="subpage-hero">
+    <div class="container">
+      <span class="hero-badge" style="background: rgba(23, 58, 47, 0.05); color: var(--primary);">Fáze 1 – Příprava realizace</span>
+      <h1 style="color: var(--primary); margin-top: 12px;">Ubytování s příběhem</h1>
+      <p class="muted">Koncept 10 apartmánů (A1–A10) inspirovaných zastaveními Křížové cesty. Každý má svůj osobitý charakter, náladu, duchovní podtext a materiálové pojetí.</p>
+    </div>
+  </section>
 
-.list li::before {
-  content: "•";
-  position: absolute;
-  left: 8px;
-  color: var(--accent);
-  font-size: 1.5rem;
-  top: -4px;
-}
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <h2>Přehled apartmánů A1–A10</h2>
+      <p class="muted" style="margin-bottom: 40px;">Zatím koncept a atmosféra. Konkrétní parametry (m², kapacita, vybavení) doplníme v další etapě.</p>
 
-.spacer-12 {
-  height: 12px;
-}
+      <div class="apartments-grid">
+        
+        <div class="apt-card">
+          <div class="apt-meta">A1 — Oliva</div>
+          <h3>Klid na začátku cesty</h3>
+          <p class="apt-quote">„Když víš, že tě čeká náročná cesta, zastavíš se pod stromem…“</p>
+          <p class="apt-desc">Interiér laděný do přírodních zemitých tónů s akcenty olivově zelené. Přírodní světlé dřevo a lněné textilie vytvářejí oázu klidu pro ztišení před výstupem.</p>
+          <div class="apt-status">Vizualizace bude doplněna</div>
+        </div>
 
-.panel {
-  background-color: #f7f9f8;
-  border: 1px solid rgba(23, 58, 47, 0.06);
-  border-radius: 16px;
-  padding: 40px;
-}
+        <div class="apt-card">
+          <div class="apt-meta">A2 — Veronika</div>
+          <h3>Jemnost a lidské teplo</h3>
+          <p class="apt-quote">„Ne každý dokáže zvednout tíhu. Ale každý může podat kapesník.“</p>
+          <p class="apt-desc">Měkké textilie, pastelové tóny a zaoblené tvary. Prostor navržený tak, aby vyzařoval bezpečí, lidskou blízkost a hřejivé domácí zázemí.</p>
+          <div class="apt-status">Vizualizace bude doplněna</div>
+        </div>
 
-.panel-title {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  color: var(--primary);
-  margin-bottom: 24px;
-  font-weight: 500;
-}
+        <div class="apt-card">
+          <div class="apt-meta">A3 — Naděje</div>
+          <h3>Nový začátek</h3>
+          <p class="apt-quote">„Naděje není jistota, ale volba jít dál.“</p>
+          <p class="apt-desc">Vzdušný prosvětlený prostor, kde se kombinuje bílá barva, jemné tóny žluté a čisté linie. Interiér, který dodává optimismus a novou energií.</p>
+          <div class="apt-status">Vizualizace bude doplněna</div>
+        </div>
 
-.booking-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+        <div class="apt-card">
+          <div class="apt-meta">A4 — Světlo</div>
+          <h3>Čistota a klid</h3>
+          <p class="apt-quote">„Ještě před úsvitem je největší tma. Pak přijde první paprsek…“</p>
+          <p class="apt-desc">Minimalistický interiér s důrazem na hru světla a stínu. Kombinace bílých ploch, zrcadel a skleněných prvků, které opticky propojují pokoj s venkovní krajinou.</p>
+          <div class="apt-status">Vizualizace bude doplněna</div>
+        </div>
 
-.booking-card {
-  background: #ffffff;
-  border: 1px solid rgba(23, 58, 47, 0.06);
-  border-radius: 12px;
-  padding: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
+        <div class="apt-card">
+          <div class="apt-meta">A5 — Dotek</div>
+          <h3>Blízkost a podpora</h3>
+          <p class="apt-quote">„Nemusíš nést cizí kříž, stačí být vedle.“</p>
+          <p class="apt-desc">Teplé tóny, hmatově výrazné materiály jako surová keramika, strukturované lněné závěsy a detaily, ze kterých je cítit poctivá lidská práce a péče o detail.</p>
+          <div class="apt-status">Vizualizace bude doplněna</div>
+        </div>
 
-.booking-card h3 {
-  font-size: 1.25rem;
-  margin: 4px 0 6px 0;
-}
+        <div class="apt-card">
+          <div class="apt-meta">A6 — Ticho</div>
+          <h3>Prostor pro sebe</h3>
+          <p class="apt-quote">„Ticho nelže. Ticho ví.“</p>
+          <p class="apt-desc">Tlumené barvy, akusticky měkké materiály, čtecí koutek. Jednoduchost bez rozptýlení.</p>
+          <div class="apt-status">Vizualizace bude doplněna</div>
+        </div>
 
-.booking-card p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 0;
-  line-height: 1.4;
-}
+        <div class="apt-card">
+          <div class="apt-meta">A7 — Oběť</div>
+          <h3>Pravdivost a jednoduchost</h3>
+          <p class="apt-quote">„Odevzdání není slabost. Je to síla pustit to, co tě svazuje.“</p>
+          <p class="apt-desc">Surové dřevo, přírodní kámen a absolutní minimum dekorací. Tlumené světlo a silný, zemitý karakter místnosti odhalující čistou podstatu architektury.</p>
+          <div class="apt-status">Vizualizace bude doplněna</div>
+        </div>
 
-.booking-status {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #c49a6c;
-  letter-spacing: 0.04em;
-}
+        <div class="apt-card">
+          <div class="apt-meta">A8 — Nebo</div>
+          <h3>Vzdušnost a výhled</h3>
+          <p class="apt-quote">„Hlava vzhůru. I když nohy klopýtají, vždycky se můžeš podívat nahoru.“</p>
+          <p class="apt-desc">Podkrovní prosvětlený apartmán s blankytně modrými tóny a lehkými, průsvitnými závěsy. Interiér, který doslova dýchá prostorem a nabízí nadhled.</p>
+          <div class="apt-status">Vizualizace bude doplněna</div>
+        </div>
 
-.booking-status.status-soon {
-  color: var(--primary);
-}
+        <div class="apt-card">
+          <div class="apt-meta">A9 — Kříž</div>
+          <h3>Opravdovost</h3>
+          <p class="apt-quote">„Někdy neseš, co sis nevybral. Ale i to tě může přivést k cíli.“</p>
+          <p class="apt-desc">Tmavší masivní dřevo, surové kovové konstrukční prvky a striktně minimalistické uspořádání. Pokoj s obrovskou designovou hloubkou, klidem a nekompromisním stylem.</p>
+          <div class="apt-status">Vizualizace bude doplněna</div>
+        </div>
 
-.booking-card .btn {
-  padding: 10px 20px;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
+        <div class="apt-card">
+          <div class="apt-meta">A10 — Cesta</div>
+          <h3>Společný čas</h3>
+          <p class="apt-quote">„Každý máme jinou cestu. Ale někdy se potkáme.“</p>
+          <p class="apt-desc">Největší, variabilní apartmán určený pro sdílení zážitků v rodině či s přáteli. Dominantou je velký společný stůl, propojené funkční zóny a otevřená dispozice.</p>
+          <div class="apt-status">Vizualizace bude doplněna</div>
+        </div>
 
-.booking-card .btn-ghost {
-  color: var(--primary);
-  border-color: rgba(23, 58, 47, 0.2);
-}
+      </div>
 
-.booking-card .btn-ghost:hover {
-  background-color: rgba(23, 58, 47, 0.04);
-  border-color: var(--primary);
-}
+      <div class="center-text">
+        Chceš být mezi prvními, kdo se dozví konkrétní termíny a parametry? Napiš nám na <a href="mailto:info@podkrizovouhorou.cz">info@podkrizovouhorou.cz</a>.
+      </div>
+    </div>
+  </section>
 
-.panel-note {
-  margin-top: 24px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  font-style: italic;
-}
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>© Pod Křížovou horou</div>
+      <div class="footer-links">
+        <a href="#">Kontakt</a>
+        <a href="#">Vizualizace</a>
+      </div>
+    </div>
+  </footer>
 
-/* ==========================================================================
-   7. STRÁNKA APARTMÁNY – CSS GRID MŘÍŽKA KARET (A1–A10)
-   ========================================================================== */
-.apartments-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
-  gap: 24px !important;
-  margin-top: 32px !important;
-}
-
-.apt-card {
-  background: #ffffff !important;
-  border: 1px solid rgba(23, 58, 47, 0.08) !important;
-  border-radius: 12px !important;
-  padding: 32px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-}
-
-.apt-card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 8px 30px rgba(17, 34, 27, 0.06) !important;
-}
-
-.apt-meta {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.apt-card h3 {
-  font-family: var(--font-serif);
-  font-size: 1.65rem;
-  color: var(--primary);
-  margin: 0 0 16px 0;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.apt-quote {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.15rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-  margin: 0 0 18px 0;
-}
-
-.apt-desc {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #4a5d55;
-  margin-bottom: auto;
-}
-
-.apt-status {
-  margin-top: 24px;
-  font-size: 0.85rem;
-  color: #8fa098;
-  background: #f7f9f8;
-  padding: 10px 12px;
-  border-radius: 6px;
-  text-align: center;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.center-text {
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--primary);
-  margin-top: 40px;
-}
-
-.center-text a {
-  color: var(--accent);
-  text-decoration: underline;
-  font-weight: 500;
-}
-
-.subpage-hero {
-  padding: 80px 0 60px 0;
-  background: linear-gradient(180deg, #f4f6f5 0%, #ffffff 100%);
-}
-
-/* ==========================================================================
-   8. PATIČKA (FOOTER)
-   ========================================================================== */
-.footer {
-  background-color: var(--bg-light);
-  padding: 40px 0;
-  border-top: 1px solid rgba(23, 58, 47, 0.06);
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-}
-
-.footer-links a {
-  color: var(--text-muted);
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  color: var(--primary);
-}
-
-/* ==========================================================================
-   9. RESPONSIVITA (MOBILNÍ ZAŘÍZENÍ)
-   ========================================================================== */
-@media (max-width: 991px) {
-  .split {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .grid-3 {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .hero-metrics {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero-cta {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .booking-card {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-  .booking-card .btn {
-    width: 100%;
-  }
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    z-index: 110;
-  }
-  .hamburger span {
-    display: block;
-    width: 28px;
-    height: 2px;
-    background-color: #ffffff;
-    transition: all 0.2s ease;
-  }
-  .menu {
-    display: none;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background-color: var(--primary);
-    flex-direction: column;
-    padding: 32px;
-    gap: 24px;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  }
-  .nav-toggle:checked ~ .menu {
-    display: flex;
-  }
-}
+</body>
+</html>
