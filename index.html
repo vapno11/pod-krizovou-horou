@@ -30,7 +30,66 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=20260211">
+  <link rel="stylesheet" href="styles.css?v=20260516">
+
+  <style>
+    .pkh-features {
+      margin-top: auto;
+      padding-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pkh-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      background: #e2e8e4;
+      color: #173A2F;
+      padding: 4px 10px;
+      font-weight: 500;
+      border-radius: 4px;
+    }
+    .booking-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .booking-card {
+      background: #fcfaf7;
+      border: 1px solid #e2e8e4;
+      padding: 20px;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .booking-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem !important;
+      margin-top: 0 !important;
+      margin-bottom: 8px !important;
+      color: #173A2F;
+    }
+    .booking-status {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #c5a358;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .grid-3 .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .grid-3 .card p {
+      flex-grow: 1;
+    }
+  </style>
 </head>
 <body class="page-home">
 
