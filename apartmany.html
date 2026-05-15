@@ -1,195 +1,264 @@
-<!doctype html>
-<html lang="cs">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+/* ==========================================================================
+   1. ZÁKLADNÍ NASTAVENÍ A PROMĚNNÉ
+   ========================================================================== */
+:root {
+  --primary: #173A2F;
+  --primary-light: #214f40;
+  --accent: #c49a6c;
+  --text: #2c3e35;
+  --text-muted: #556b63;
+  --bg-light: #f4f6f5;
+  --bg-card: #ffffff;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+}
 
-  <title>Designové apartmány A1–A10 | Pod Křížovou horou</title>
-  <meta name="description" content="Koncept 10 komorních apartmánů inspirovaných zastaveními Křížové cesty. Poznejte interiéry s duší galerie a jedinečnou atmosférou.">
-  <link rel="canonical" href="https://podkrizovouhorou.cz/apartmany.html">
-  <meta name="theme-color" content="#173A2F">
-  <meta name="robots" content="index,follow">
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <meta property="og:title" content="Apartmány A1–A10 | Pod Křížovou horou">
-  <meta property="og:description" content="Koncept 10 komorních apartmánů inspirovaných zastaveními Křížové cesty. Poznejte interiéry s duší galerie.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://podkrizovouhorou.cz/apartmany.html">
-  <meta property="og:locale" content="cs_CZ">
+body {
+  font-family: var(--font-sans);
+  color: var(--text);
+  background-color: #ffffff;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
 
-  <link rel="icon" href="/favicon.ico">
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+/* ==========================================================================
+   2. TYPOGRAFIE A TLAČÍTKA
+   ========================================================================== */
+h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
 
-  <link rel="stylesheet" href="styles.css?v=1006">
-</head>
-<body class="page-apartmany">
+h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 500;
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
 
-<header class="header">
-  <div class="container nav">
-    <a class="brand" href="/" aria-label="Pod Křížovou horou – úvod">Pod Křížovou horou</a>
+h3 {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  color: var(--primary);
+  font-weight: 600;
+  line-height: 1.3;
+}
 
-    <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Otevřít menu" aria-controls="main-menu" aria-expanded="false">
+p {
+  margin-bottom: 16px;
+}
 
-    <label class="hamburger" for="nav-toggle" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </label>
+.muted {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 700px;
+}
 
-    <nav class="menu" id="main-menu" aria-label="Hlavní menu">
-      <a href="/">Úvod</a>
-      <a href="apartmany.html">Apartmány</a>
-      <a href="caravanpark.html">Caravanpark</a>
-      <a href="bistro.html">Bistro</a>
-      <a href="vizualizace.html">Vizualizace</a>
-      <a href="kontakt.html">Kontakt</a>
-    </nav>
-  </div>
-</header>
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
 
-<main>
-  <section class="hero subpage-hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="container hero-inner">
-      <div class="hero-badge">Fáze 1 – Příprava realizace</div>
-      <h1>Ubytování s příběhem</h1>
-      <p class="hero-lead">
-        Koncept 10 apartmánů (A1–A10) inspirovaných zastaveními Křížové cesty. Každý pokoj má svůj osobitý charakter, náladu, duchovní podtext a materiálové pojetí.
-      </p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="kontakt.html">Mám zájem o novinky</a>
-        <a class="btn btn-ghost" href="vizualizace.html">Vizualizace projektu</a>
-      </div>
-    </div>
-  </section>
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  border: 1px solid var(--primary);
+}
 
-  <section class="section container">
-    <div class="section-head">
-      <h2>Přehled apartmánů A1–A10</h2>
-      <p class="muted">Zatím koncept a atmosféra. Konkrétní parametry (m², kapacitu, vybavení) doplníme v další etapě.</p>
-    </div>
+.btn-primary:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary-light);
+}
 
-    <div class="apartments-grid">
-      
-      <div class="apt-card">
-        <div class="apt-meta">A1 — OLIVA</div>
-        <h3>Klid na začátku cesty</h3>
-        <blockquote class="apt-quote">„Když víš, že tě čeká náročná cesta, zastavíš se pod stromem...“</blockquote>
-        <p class="apt-desc">Interiér laděný do přírodních zemitých tónů s akcenty olivově zelené. Přírodní světlé dřevo a lněné textilie vytvářejí oázu klidu pro ztišení před výstupem.</p>
-        <div class="apt-status">Vizualizace bude doplněna</div>
-      </div>
+.btn-ghost {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-      <div class="apt-card">
-        <div class="apt-meta">A2 — VERONIKA</div>
-        <h3>Jemnost a lidské teplo</h3>
-        <blockquote class="apt-quote">„Ne každý dokáže zvednout tíhu. Ale každý může podat kapesník.“</blockquote>
-        <p class="apt-desc">Měkké textilie, pastelové tóny a zaoblené tvary. Prostor navržený tak, aby vyzařoval bezpečí, lidskou blízkost a hřejivé domácí zázemí.</p>
-        <div class="apt-status">Vizualizace bude doplněna</div>
-      </div>
+.btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
 
-      <div class="apt-card">
-        <div class="apt-meta">A3 — NADĚJE</div>
-        <h3>Nový začátek</h3>
-        <blockquote class="apt-quote">„Naděje není jistota, ale volba jít dál.“</blockquote>
-        <p class="apt-desc">Vzdušný prosvětlený prostor, kde se kombinuje bílá barva, jemné tóny žluté a čisté linie. Interiér, který dodává optimismus a novou energii.</p>
-        <div class="apt-status">Vizualizace bude doplněna</div>
-      </div>
+/* ==========================================================================
+   3. HLAVIČKA A NAVIGACE
+   ========================================================================== */
+.header {
+  background-color: var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
 
-      <div class="apt-card">
-        <div class="apt-meta">A4 — SVĚTLO</div>
-        <h3>Čistota a klid</h3>
-        <blockquote class="apt-quote">„Ještě před úsvitem je největší tma. Pak přijde první paprsek...“</blockquote>
-        <p class="apt-desc">Minimalistický interiér s důrazem na hru světla a stínu. Kombinace bílých ploch, zrcadel a skleněných prvků, které opticky propojují pokoj s venkovní krajinou.</p>
-        <div class="apt-status">Vizualizace bude doplněna</div>
-      </div>
+.nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-      <div class="apt-card">
-        <div class="apt-meta">A5 — DOTEK</div>
-        <h3>Blízkost a podpora</h3>
-        <blockquote class="apt-quote">„Nemusíš nést cizí kříž, stačí být vedle.“</blockquote>
-        <p class="apt-desc">Teplé tóny, hmatově výrazné materiály jako surová keramika, strukturované lněné závěsy a detaily, ze kterých je cítit poctivá lidská práce a péče o detail.</p>
-        <div class="apt-status">Vizualizace bude doplněna</div>
-      </div>
+.brand {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
 
-      <div class="apt-card">
-        <div class="apt-meta">A6 — TICHO</div>
-        <h3>Prostor pro sebe</h3>
-        <blockquote class="apt-quote">„Ticho nelže. Ticho ví.“</blockquote>
-        <p class="apt-desc">Tlumené barvy, akusticky měkké materiály, čtecí koutek. Jednoduchost bez rozptýlení.</p>
-        <div class="apt-status">Vizualizace bude doplněna</div>
-      </div>
+.menu {
+  display: flex;
+  gap: 32px;
+}
 
-      <div class="apt-card">
-        <div class="apt-meta">A7 — OBĚŤ</div>
-        <h3>Pravdivost a jednoduchost</h3>
-        <blockquote class="apt-quote">„Odevzdání není slabost. Je to síla pustit to, co tě svazuje.“</blockquote>
-        <p class="apt-desc">Surové dřevo, přírodní kámen a absolutní minimum dekorací. Tlumené světlo a silný, zemitý charakter místnosti odhalující čistou podstatu architektury.</p>
-        <div class="apt-status">Vizualizace bude doplněna</div>
-      </div>
+.menu a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
 
-      <div class="apt-card">
-        <div class="apt-meta">A8 — NEBO</div>
-        <h3>Vzdušnost a výhled</h3>
-        <blockquote class="apt-quote">„Hlava vzhůru. I když nohy klopýtají, vždycky se můžeš podívat nahoru.“</blockquote>
-        <p class="apt-desc">Podkrovní prosvětlený apartmán s blankytně modrými tóny a lehkými, průsvitnými závěsy. Interiér, který doslova dýchá prostorem a nabízí nadhled.</p>
-        <div class="apt-status">Vizualizace bude doplněna</div>
-      </div>
+.menu a:hover, .menu a.active {
+  color: #ffffff;
+}
 
-      <div class="apt-card">
-        <div class="apt-meta">A9 — KŘÍŽ</div>
-        <h3>Opravdovost</h3>
-        <blockquote class="apt-quote">„Někdy neseš, co sis nevybral. Ale i to tě může přivést k cíli.“</blockquote>
-        <p class="apt-desc">Tmavší masivní dřevo, surové kovové konstrukční prvky a striktně minimalistické uspořádání. Pokoj s obrovskou designovou hloubkou, klidem a nekompromisním stylem.</p>
-        <div class="apt-status">Vizualizace bude doplněna</div>
-      </div>
+.nav-toggle, .hamburger {
+  display: none;
+}
 
-      <div class="apt-card">
-        <div class="apt-meta">A10 — CESTA</div>
-        <h3>Společný čas</h3>
-        <blockquote class="apt-quote">„Každý máme jinou cestu. Ale někdy se potkáme.“</blockquote>
-        <p class="apt-desc">Největší, variabilní apartmán určený pro sdílení zážitků v rodině či s přáteli. Dominantou je velký společný stůl, propojené funkční zóny a otevřená dispozice.</p>
-        <div class="apt-status">Vizualizace bude doplněna</div>
-      </div>
+/* ==========================================================================
+   4. HERO SEKCE (ÚVODNÍ STRANA)
+   ========================================================================== */
+.hero {
+  position: relative;
+  background-color: var(--primary);
+  padding: 80px 0 100px 0;
+  overflow: hidden;
+}
 
-    </div>
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 80% 20%, rgba(33, 79, 64, 0.4) 0%, transparent 60%);
+  pointer-events: none;
+}
 
-    <div class="spacer-12"></div>
-    <div class="center-text">
-      <p>Chceš být mezi prvními, kdo se dozví konkrétní termíny a parametry? Napiš nám na <a href="mailto:info@podkrizovouhorou.cz">info@podkrizovouhorou.cz</a>.</p>
-    </div>
-  </section>
-</main>
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-row">
-      <div>© Pod Křížovou horou</div>
-      <div class="footer-links">
-        <a href="kontakt.html">Kontakt</a>
-        <a href="vizualizace.html">Vizualizace</a>
-      </div>
-    </div>
-  </div>
-</footer>
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 24px;
+}
 
-<script>
-  const toggle = document.getElementById("nav-toggle");
-  if (toggle) {
-    const sync = () => toggle.setAttribute("aria-expanded", toggle.checked ? "true" : "false");
-    toggle.addEventListener("change", sync);
-    sync();
-  }
+.hero-lead {
+  font-size: clamp(1.15rem, 3vw, 1.35rem);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
 
-  const path = location.pathname.split("/").pop();
-  const current = path && path.length ? path : "apartmany.html";
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 80px;
+}
 
-  document.querySelectorAll(".menu a").forEach(a=>{
-    const href = a.getAttribute("href");
-    if (href === current) {
-      a.classList.add("active");
-    }
-  });
-</script>
+/* METRIKY V HERO SEKCI */
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
 
-</body>
-</html>
+.metric {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: left;
+}
+
+.metric-k {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.metric-v {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+}
+
+.metric-v span {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   5. SEKCE S KARTAMI (KONCEPT NAŠICH ZASTAVENÍ)
+   ========================================================================== */
+.section {
+  padding: 100px 0;
+}
+
+.section-head {
+  margin-bottom: 48px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:
