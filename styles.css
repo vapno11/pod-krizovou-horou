@@ -409,3 +409,77 @@ body.page-apartmany .badge{
 body.page-apartmany .card p strong{
   color: var(--brand-2);
 }
+/* --- PKH CUSTOM DOPLŇKY PRO NOVÝ OBSAH --- */
+
+/* 1. Styly pro štítky uvnitř tří hlavních karet */
+.pkh-features {
+  margin-top: auto; /* Tlačí štítky vždy dolů nad odkaz */
+  padding-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pkh-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  background: #f0f4f2; /* Velmi jemný zelenavý podklad */
+  color: #173A2F; /* Tvá hlavní zelená barva */
+  padding: 4px 10px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+/* 2. Styly pro rezervační rozcestník v pravém panelu */
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.booking-card {
+  background: #fcfaf7; /* Krémové pozadí, které ladí s tvým webem */
+  border: 1px solid #e2e8e4;
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.booking-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+  color: #173A2F !important;
+  letter-spacing: 0;
+}
+
+.booking-card p {
+  font-size: 0.85rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 15px !important;
+  color: #555555;
+}
+
+.booking-status {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #c5a358; /* Elegantní zlatá barva pro status */
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Pojistka pro flexbox, aby měly všechny 3 karty stejnou výšku */
+.grid-3 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
