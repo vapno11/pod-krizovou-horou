@@ -1,164 +1,79 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Caravanpark – Pod Křížovou horou</title>
-  <meta name="description" content="Kultivované stání pro karavany v Lužických horách. Elektřina, voda, výlevka a klidné zázemí.">
-  <link rel="canonical" href="https://podkrizovouhorou.cz/caravanpark.html">
-  <meta name="theme-color" content="#173A2F">
-  <meta name="robots" content="index,follow">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Caravanpark – Pod Křížovou horou">
-  <meta property="og:description" content="Kultivované stání pro karavany v Lužických horách. Elektřina, voda, výlevka a klidné zázemí.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://podkrizovouhorou.cz/caravanpark.html">
-  <meta property="og:locale" content="cs_CZ">
-  <!-- OG image doplníme později -->
-  <!-- <meta property="og:image" content="https://podkrizovouhorou.cz/assets/og/og-image.jpg"> -->
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Caravanpark – Pod Křížovou horou">
-  <meta name="twitter:description" content="Kultivované stání pro karavany v Lužických horách. Elektřina, voda, výlevka a klidné zázemí.">
-
-  <link rel="icon" href="/favicon.ico">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caravanpark | Pod Křížovou horou</title>
+  <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css?v=20260211">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="header">
-  <div class="container nav">
-    <a class="brand" href="/" aria-label="Pod Křížovou horou – úvod">Pod Křížovou horou</a>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="brand">Pod Křížovou horou</a>
+      <nav class="menu">
+        <a href="index.html">Úvod</a>
+        <a href="apartmany.html">Apartmány</a>
+        <a href="caravanpark.html" class="active">Caravanpark</a>
+        <a href="bistro.html">Bistro</a>
+        <a href="vizualizace.html">Vizualizace</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
 
-    <input class="nav-toggle" type="checkbox" id="nav-toggle"
-      aria-label="Otevřít menu" aria-controls="main-menu" aria-expanded="false">
-
-    <label class="hamburger" for="nav-toggle" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </label>
-
-    <nav class="menu" id="main-menu" aria-label="Hlavní menu">
-      <a href="/">Úvod</a>
-      <a href="apartmany.html">Apartmány</a>
-      <a href="caravanpark.html">Caravanpark</a>
-      <a href="bistro.html">Bistro</a>
-      <a href="vizualizace.html">Vizualizace</a>
-      <a href="kontakt.html">Kontakt</a>
-    </nav>
-  </div>
-</header>
-
-<main class="main">
-  <section class="page-hero container">
-    <div class="kicker">Caravanpark</div>
-    <h1>Kultivovaná zastávka na cestě</h1>
-    <p class="muted">
-      Klidné stání pro karavany v Lužických horách. Bez zbytečností — s tím, co na cestách opravdu potřebujete.
-    </p>
-    <div class="spacer-12"></div>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="kontakt.html">Zájem / rezervace</a>
-      <a class="btn btn-ghost" href="vizualizace.html">Prohlédnout vizualizace</a>
+  <section class="subpage-hero">
+    <div class="container">
+      <span class="hero-badge" style="background: rgba(23, 58, 47, 0.05); color: var(--primary);">Fáze 1 – Příprava realizace</span>
+      <h1 style="color: var(--primary); margin-top: 12px;">Caravanpark</h1>
+      <p class="muted">Komorní a klidné zázemí pro nezávislé cestovatele přímo pod Křížovou horou. Místo, kde ranní káva chutná nejlépe s výhledem do krajiny.</p>
     </div>
   </section>
 
-  <section class="section container">
-    <div class="grid-3">
-      <div class="card">
-        <span class="badge">Servis</span>
-        <h3>Elektrika a voda</h3>
-        <p class="muted">230 V / 16 A, pitná voda na místě. Jednoduše a bezpečně.</p>
-      </div>
-
-      <div class="card">
-        <span class="badge">Pohodlí</span>
-        <h3>Rovné stání</h3>
-        <p class="muted">Komfortní rozměr pro běžné obytné vozy. Klidné prostředí.</p>
-      </div>
-
-      <div class="card">
-        <span class="badge">Praktičnost</span>
-        <h3>Výlevka</h3>
-        <p class="muted">Zázemí pro základní servis karavanů (chemické WC / odpadní voda).</p>
-      </div>
-    </div>
-
-    <div class="note">
-      Parametry a finální kapacity upřesníme v další etapě (projekt v přípravě).
-    </div>
-  </section>
-
-  <section class="section container">
-    <div class="split">
+  <section class="section" style="padding-top: 0;">
+    <div class="container split">
       <div>
-        <h2>Bezrecepční, ale s podporou</h2>
-        <p class="muted">
-          Rezervace a informace řešíme digitálně. Přístup do areálu bude jednoduchý — a v případě potřeby budete mít kontakt na podporu.
-        </p>
+        <h2>Klidné stání s kompletním zázemím</h2>
+        <p>Nepřipravujeme žádný obří, hlučný kemp. Naším cílem je vytvořit několik prémiových, chytře oddělených stání pro karavany a obytné vozy, kde budete mít dostatek soukromí a klidu pro odpočinek.</p>
+        
         <ul class="list">
-          <li>online domluva / rezervace</li>
-          <li>jasné instrukce před příjezdem</li>
-          <li>pohotovostní kontakt</li>
+          <li>Zpevněné a vyrovnané plochy pro snadné parkování</li>
+          <li>Vlastní přípojka elektřiny a pitné vody pro každé stání</li>
+          <li>Moderní chemická výlevka a šedá voda (servisní místo)</li>
+          <li>Sociální zařízení a sprchy v docházkové vzdálenosti</li>
+          <li>Krásné výhledy na Křížovou horu a okolní přírodu</li>
         </ul>
       </div>
 
       <div class="panel">
-        <div class="panel-title">Pro koho je caravanpark</div>
-        <div class="panel-row"><span>Karavanisté</span><strong>na cestě</strong></div>
-        <div class="panel-row"><span>Pěší / bike</span><strong>zázemí</strong></div>
-        <div class="panel-row"><span>Klid</span><strong>priorita</strong></div>
-        <div class="panel-note">Cíl: kultivované místo, ne hlučný kemp.</div>
+        <div class="panel-title">Dostupnost stání</div>
+        <div class="booking-grid">
+          <div class="booking-card">
+            <div>
+              <span class="booking-status status-soon">Příprava projektu</span>
+              <h3>Sezóna 2027</h3>
+              <p>Aktuálně pracujeme na terénních úpravách a přípojkách.</p>
+            </div>
+            <a href="kontakt.html" class="btn btn-ghost">Chci vědět včas</a>
+          </div>
+        </div>
+        <p class="panel-note">* Spuštění rezervací pro první testovací karavany plánujeme koncem roku 2026.</p>
       </div>
     </div>
   </section>
-</main>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-row">
+  <footer class="footer">
+    <div class="container footer-row">
       <div>© Pod Křížovou horou</div>
       <div class="footer-links">
         <a href="kontakt.html">Kontakt</a>
         <a href="vizualizace.html">Vizualizace</a>
       </div>
     </div>
-  </div>
-</footer>
-
-<script>
-  // a11y: aria-expanded sync
-  const toggle = document.getElementById("nav-toggle");
-  if (toggle) {
-    const sync = () => toggle.setAttribute("aria-expanded", toggle.checked ? "true" : "false");
-    toggle.addEventListener("change", sync);
-    sync();
-  }
-
-  // aktivní položka menu (funguje i pro "/")
-  const path = location.pathname.split("/").pop();
-  const current = path && path.length ? path : "index.html";
-
-  document.querySelectorAll(".menu a").forEach(a=>{
-    const href = a.getAttribute("href");
-    if ((current === "index.html" && (href === "/" || href === "index.html")) || href === current) {
-      a.classList.add("active");
-    }
-  });
-
-  // zavřít mobilní menu po kliku
-  document.querySelectorAll(".menu a").forEach(a=>{
-    a.addEventListener("click", ()=>{ if(toggle) toggle.checked=false; });
-  });
-</script>
+  </footer>
 
 </body>
 </html>
