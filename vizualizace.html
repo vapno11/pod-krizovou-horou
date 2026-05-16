@@ -1,151 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Vizualizace | Pod Křížovou horou</title>
-  <meta name="description" content="Vizualizace projektu Pod Křížovou horou – apartmánový dům a caravan park na vstupu do Lužických hor.">
-  <link rel="canonical" href="https://podkrizovouhorou.cz/vizualizace.html">
-  <meta name="theme-color" content="#173A2F">
-  <meta name="robots" content="index,follow">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Vizualizace | Pod Křížovou horou">
-  <meta property="og:description" content="Vizualizace projektu – apartmánový dům a caravan park na vstupu do Lužických hor.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://podkrizovouhorou.cz/vizualizace.html">
-  <meta property="og:locale" content="cs_CZ">
-  <!-- <meta property="og:image" content="https://podkrizovouhorou.cz/assets/og/og-image.jpg"> -->
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Vizualizace | Pod Křížovou horou">
-  <meta name="twitter:description" content="Vizualizace projektu – apartmánový dům a caravan park na vstupu do Lužických hor.">
-
-  <link rel="icon" href="/favicon.ico">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vizualizace a vývoj projektu | Pod Křížovou horou</title>
+  <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css?v=20260211">
-
-  <style>
-    /* Lokální doplnění jen pro galerii + lightbox (není nutné sahat do styles.css) */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-      margin-top: 18px;
-    }
-    .gallery-item {
-      grid-column: span 6;
-      border-radius: 16px;
-      overflow: hidden;
-      background: rgba(255,255,255,.7);
-      border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
-    }
-    .gallery-item a {
-      display: block;
-      color: inherit;
-      text-decoration: none;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transform: scale(1);
-      transition: transform .25s ease;
-    }
-    .gallery-item a:hover img { transform: scale(1.01); }
-    .gallery-caption {
-      padding: 14px 16px;
-      font-size: 14px;
-      color: rgba(0,0,0,.72);
-    }
-
-    @media (max-width: 900px) {
-      .gallery-item { grid-column: span 12; }
-    }
-
-    /* Lightbox */
-    .lb {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      background: rgba(10, 16, 14, 0.72);
-      z-index: 9999;
-    }
-    .lb.open { display: flex; }
-    .lb-inner {
-      width: min(1100px, 96vw);
-      max-height: 88vh;
-      border-radius: 18px;
-      overflow: hidden;
-      background: rgba(255,255,255,.92);
-      border: 1px solid rgba(255,255,255,.14);
-      box-shadow: 0 18px 60px rgba(0,0,0,.35);
-      position: relative;
-    }
-    .lb-media {
-      background: #0f1513;
-    }
-    .lb-media img {
-      width: 100%;
-      height: auto;
-      display: block;
-      max-height: 75vh;
-      object-fit: contain;
-      background: #0f1513;
-    }
-    .lb-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 12px 14px;
-      font-size: 14px;
-      color: rgba(0,0,0,.78);
-    }
-    .lb-title {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      min-width: 0;
-    }
-    .lb-title strong {
-      font-weight: 600;
-    }
-    .lb-title span {
-      opacity: .8;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 70ch;
-    }
-    .lb-close {
-      border: 1px solid rgba(0,0,0,.12);
-      background: rgba(255,255,255,.9);
-      border-radius: 999px;
-      padding: 8px 12px;
-      cursor: pointer;
-      font: inherit;
-    }
-    .lb-close:focus {
-      outline: 2px solid rgba(23,58,47,.55);
-      outline-offset: 2px;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+<body>
 
-<body class="page-vizualizace">
-
-<header class="header">
+  <header class="header">
   <div class="container nav">
     <a class="brand" href="/" aria-label="Pod Křížovou horou – úvod">Pod Křížovou horou</a>
 
@@ -161,162 +27,67 @@
       <a href="apartmany.html">Apartmány</a>
       <a href="caravanpark.html">Caravanpark</a>
       <a href="bistro.html">Bistro</a>
-      <a href="vizualizace.html">Vizualizace</a>
+      <a href="vizualizace.html" class="active">Vizualizace</a>
       <a href="kontakt.html">Kontakt</a>
     </nav>
   </div>
 </header>
 
-<main>
-  <section class="section container">
-    <div class="section-head">
-      <h1>Vizualizace</h1>
-      <p class="muted">
-        První náhledy projektu. Postupně doplníme další exteriéry, interiéry i detaily etap.
-      </p>
+  <section class="subpage-hero">
+    <div class="container">
+      <span class="hero-badge" style="background: rgba(23, 58, 47, 0.05); color: var(--primary);">Architektura a vize</span>
+      <h1 style="color: var(--primary); margin-top: 12px;">Jak projekt vzniká</h1>
+      <p class="muted">Spojení historického odkazu Lužických hor s moderní, udržitelnou architekturou 21. století. Podívejte se na plánované etapy a budoucí podobu areálu.</p>
     </div>
-
-    <div class="gallery" aria-label="Galerie vizualizací">
-      <!-- 1. vlaštovka (soubor je v rootu repozitáře) -->
-      <div class="gallery-item">
-        <a href="vizualizace-01-exterier.png"
-           class="js-open-lightbox"
-           data-title="Exteriér"
-           data-caption="Vizualizace 01 – exteriér (první vlaštovka)">
-          <img
-            src="vizualizace-01-exterier.png"
-            alt="Vizualizace exteriéru – Pod Křížovou horou"
-            loading="lazy"
-            decoding="async">
-          <div class="gallery-caption">Vizualizace 01 – exteriér</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="spacer-12"></div>
-    <a class="btn btn-ghost" href="kontakt.html">Chcete další informace? Napište nám →</a>
   </section>
-</main>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-row">
-      <div>
-        © Pod Křížovou horou<br>
-        <a href="mailto:info@podkrizovouhorou.cz">info@podkrizovouhorou.cz</a>
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <h2>Harmonogram a vizualizace</h2>
+      <p class="muted" style="margin-bottom: 40px;">Projekt realizujeme postupně s maximálním respektem k okolní přírodě a krajinnému rázu.</p>
+
+      <div class="apartments-grid">
+        
+        <div class="apt-card">
+          <div class="apt-meta">Fáze 0 — Již brzy (2026/2027)</div>
+          <h3>Bistro Citroën HY & Stellplatz</h3>
+          <p class="apt-desc">Zprovoznění stylového občerstvení v zrenovovaném veteránu a otevření prvních stání pro karavany včetně kompletního servisního zázemí (voda, elektřina, odpady).</p>
+          <div class="apt-status" style="color: #c49a6c;">Aktuálně: Probíhají terénní úpravy</div>
+        </div>
+
+        <div class="apt-card">
+          <div class="apt-meta">Fáze 1 — V přípravě</div>
+          <h3>Apartmánový dům</h3>
+          <p class="apt-desc">Stavební obnova a dostavba hlavní budovy. V této fázi vznikne unikátní koncept 10 designových apartmánů inspirovaných zastaveními Křížové cesty.</p>
+          <div class="apt-status">Dokumentace hotova, dotační podpora schválena</div>
+        </div>
+
+        <div class="apt-card">
+          <div class="apt-meta">Fáze 2 — Budoucí vize</div>
+          <h3>Privátní wellness & Galerie</h3>
+          <p class="apt-desc">Rozšíření služeb o relaxační zónu s finskou saunou a horkými sudy zakomponovanými do svahu s panoramatickým výhledem, propojenou s expozicí historických grafik.</p>
+          <div class="apt-status">Architektonická studie</div>
+        </div>
+
       </div>
+
+      <div class="panel" style="margin-top: 60px;">
+        <div class="panel-title">Grafické podklady a fotogalerie</div>
+        <p style="margin-bottom: 0;"><strong>Poznámka pro návštěvníky:</strong> Na finálních 3D vizualizacích interiérů a exteriérů v současnosti pracujeme s architektonickým studiem. Kompletní fotogalerii a rendery sem nahrajeme v dalším kroku. Chcete-li vidět nákresy dispozic dříve, napište nám.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>© Pod Křížovou horou</div>
       <div class="footer-links">
         <a href="kontakt.html">Kontakt</a>
         <a href="vizualizace.html">Vizualizace</a>
       </div>
     </div>
-  </div>
-</footer>
-
-<!-- Lightbox -->
-<div class="lb" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Zvětšený náhled">
-  <div class="lb-inner" role="document">
-    <div class="lb-media">
-      <img id="lb-img" src="" alt="">
-    </div>
-    <div class="lb-bar">
-      <div class="lb-title">
-        <strong id="lb-title">Vizualizace</strong>
-        <span id="lb-caption"></span>
-      </div>
-      <button class="lb-close" id="lb-close" type="button" aria-label="Zavřít (Esc)">Zavřít</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  // a11y: aria-expanded sync
-  const toggle = document.getElementById("nav-toggle");
-  if (toggle) {
-    const sync = () => toggle.setAttribute("aria-expanded", toggle.checked ? "true" : "false");
-    toggle.addEventListener("change", sync);
-    sync();
-  }
-
-  // aktivní položka menu (funguje i pro "/")
-  const path = location.pathname.split("/").pop();
-  const current = path && path.length ? path : "index.html";
-
-  document.querySelectorAll(".menu a").forEach(a=>{
-    const href = a.getAttribute("href");
-    if ((current === "index.html" && (href === "/" || href === "index.html")) || href === current) {
-      a.classList.add("active");
-    }
-  });
-
-  // zavřít mobilní menu po kliku
-  document.querySelectorAll(".menu a").forEach(a=>{
-    a.addEventListener("click", ()=>{ if(toggle) toggle.checked=false; });
-  });
-
-  // Lightbox
-  const lb = document.getElementById("lightbox");
-  const lbImg = document.getElementById("lb-img");
-  const lbTitle = document.getElementById("lb-title");
-  const lbCaption = document.getElementById("lb-caption");
-  const lbClose = document.getElementById("lb-close");
-
-  let lastFocus = null;
-
-  function openLightbox(src, title, caption, alt) {
-    lastFocus = document.activeElement;
-
-    lbImg.src = src;
-    lbImg.alt = alt || title || "Vizualizace";
-    lbTitle.textContent = title || "Vizualizace";
-    lbCaption.textContent = caption || "";
-
-    lb.classList.add("open");
-    lb.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-    lbClose.focus();
-  }
-
-  function closeLightbox() {
-    lb.classList.remove("open");
-    lb.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-    lbImg.src = "";
-    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
-  }
-
-  document.querySelectorAll(".js-open-lightbox").forEach(a => {
-    a.addEventListener("click", (e) => {
-      e.preventDefault();
-      openLightbox(
-        a.getAttribute("href"),
-        a.dataset.title || "Vizualizace",
-        a.dataset.caption || "",
-        a.querySelector("img") ? a.querySelector("img").getAttribute("alt") : ""
-      );
-    });
-
-    // a11y: otevřít i Enterem
-    a.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        a.click();
-      }
-    });
-  });
-
-  lbClose.addEventListener("click", closeLightbox);
-
-  // klik mimo obsah zavře
-  lb.addEventListener("click", (e) => {
-    if (e.target === lb) closeLightbox();
-  });
-
-  // ESC zavře
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lb.classList.contains("open")) closeLightbox();
-  });
-</script>
+  </footer>
 
 </body>
 </html>

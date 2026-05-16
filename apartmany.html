@@ -11,19 +11,27 @@
 </head>
 <body>
 
-  <header class="header">
-    <div class="container nav">
-      <a href="index.html" class="brand">Pod Křížovou horou</a>
-      <nav class="menu">
-        <a href="index.html">Úvod</a>
-        <a href="apartmany.html" class="active">Apartmány</a>
-        <a href="caravanpark.html">Caravanpark</a>
-        <a href="bistro.html">Bistro</a>
-        <a href="vizualizace.html">Vizualizace</a>
-        <a href="kontakt.html">Kontakt</a>
-      </nav>
-    </div>
-  </header>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="Pod Křížovou horou – úvod">Pod Křížovou horou</a>
+
+    <input class="nav-toggle" type="checkbox" id="nav-toggle"
+      aria-label="Otevřít menu" aria-controls="main-menu" aria-expanded="false">
+
+    <label class="hamburger" for="nav-toggle" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="menu" id="main-menu" aria-label="Hlavní menu">
+      <a href="/">Úvod</a>
+      <a href="apartmany.html" class="active">Apartmány</a>
+      <a href="caravanpark.html">Caravanpark</a>
+      <a href="bistro.html">Bistro</a>
+      <a href="vizualizace.html">Vizualizace</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
   <section class="subpage-hero">
     <div class="container">
@@ -97,7 +105,7 @@
         </div>
 
         <div class="apt-card">
-          <div class="apt-meta">A8 — Nebo</div>
+          <div class="apt-meta">A8 — Nebe</div>
           <h3>Vzdušnost a výhled</h3>
           <p class="apt-quote">„Hlava vzhůru. I když nohy klopýtají, vždycky se můžeš podívat nahoru.“</p>
           <p class="apt-desc">Podkrovní prosvětlený apartmán s blankytně modrými tóny a lehkými, průsvitnými závěsy. Interiér, který doslova dýchá prostorem a nabízí nadhled.</p>

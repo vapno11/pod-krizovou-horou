@@ -12,18 +12,26 @@
 <body>
 
   <header class="header">
-    <div class="container nav">
-      <a href="index.html" class="brand">Pod Křížovou horou</a>
-      <nav class="menu">
-        <a href="index.html">Úvod</a>
-        <a href="apartmany.html">Apartmány</a>
-        <a href="caravanpark.html" class="active">Caravanpark</a>
-        <a href="bistro.html">Bistro</a>
-        <a href="vizualizace.html">Vizualizace</a>
-        <a href="kontakt.html">Kontakt</a>
-      </nav>
-    </div>
-  </header>
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="Pod Křížovou horou – úvod">Pod Křížovou horou</a>
+
+    <input class="nav-toggle" type="checkbox" id="nav-toggle"
+      aria-label="Otevřít menu" aria-controls="main-menu" aria-expanded="false">
+
+    <label class="hamburger" for="nav-toggle" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="menu" id="main-menu" aria-label="Hlavní menu">
+      <a href="/">Úvod</a>
+      <a href="apartmany.html">Apartmány</a>
+      <a href="caravanpark.html" class="active">Caravanpark</a>
+      <a href="bistro.html">Bistro</a>
+      <a href="vizualizace.html">Vizualizace</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
   <section class="subpage-hero">
     <div class="container">
